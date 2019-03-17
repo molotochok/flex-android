@@ -1,12 +1,17 @@
 package com.example.flex
 
+import android.location.Address
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
-import android.util.Log
+import com.example.flex.Models.Flex
+import com.example.flex.Models.Server
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.Result
 import me.dm7.barcodescanner.zxing.ZXingScannerView
+import com.moandjiezana.toml.Toml
+import java.lang.Exception
+
 
 class ScanActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
 
@@ -41,8 +46,23 @@ class ScanActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
     override fun handleResult(rawResult: Result?) {
         val builder = AlertDialog.Builder(this)
 
-        builder.setMessage("text: ${rawResult!!.text})")
-        builder.setPositiveButton("YES"){dialog, which ->
+        var toml:Toml
+        try{
+            toml = Toml().read(rawResult!!.text)
+        }catch(ex:Exception){
+            builder.setMessage("Wrong qr-code")
+            builder.setPositiveButton("Ok"){dialog, which ->
+                scannerView!!.resumeCameraPreview(this)
+            }
+            builder.create().show()
+            return
+        }
+
+        val server = toml.to(Server::class.java)
+
+        builder.setMessage(server.flex.toString())
+
+        builder.setPositiveButton("Ok"){dialog, which ->
             scannerView!!.resumeCameraPreview(this)
         }
 

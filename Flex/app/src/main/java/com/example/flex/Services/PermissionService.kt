@@ -1,4 +1,4 @@
-package com.example.flex
+package com.example.flex.Services
 
 import android.app.Activity
 import android.content.pm.PackageManager
