@@ -36,6 +36,8 @@
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"/>
     <ImageButton
+            android:onClick="openScanReader"
+            android:background="?attr/colorBackgroundFloating"
             android:layout_width="125dp"
             android:layout_height="125dp" app:srcCompat="@drawable/qr_code"
             android:id="@+id/imageButton" android:adjustViewBounds="false"
