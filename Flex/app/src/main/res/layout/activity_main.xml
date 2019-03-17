@@ -40,7 +40,7 @@
             android:background="?attr/colorBackgroundFloating"
             android:layout_width="125dp"
             android:layout_height="125dp" app:srcCompat="@drawable/qr_code"
-            android:id="@+id/imageButton" android:adjustViewBounds="false"
+            android:id="@+id/scanReaderBtn" android:adjustViewBounds="false"
             android:cropToPadding="false" android:scaleType="centerInside"
             style="@style/Widget.AppCompat.ImageButton"
             android:layout_marginEnd="8dp"
