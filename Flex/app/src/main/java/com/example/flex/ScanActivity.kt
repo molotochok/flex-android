@@ -2,7 +2,9 @@ package com.example.flex
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.util.Log
+import com.google.zxing.BarcodeFormat
 import com.google.zxing.Result
 import me.dm7.barcodescanner.zxing.ZXingScannerView
 
@@ -15,6 +17,7 @@ class ScanActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
 
         // Programmatically initialize the scanner view
         scannerView = ZXingScannerView(this)
+        scannerView!!.setFormats(mutableListOf(BarcodeFormat.QR_CODE))
         // Set the scanner view as the content view
         setContentView(scannerView)
     }
@@ -36,14 +39,15 @@ class ScanActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
     }
 
     override fun handleResult(rawResult: Result?) {
-        // Do something with the result here
-        Log.v("tag", rawResult!!.text) // Prints scan results
-        Log.v("tag", rawResult!!.barcodeFormat.toString()) // Prints the scan format (qrcode, pdf417 etc.)
+        val builder = AlertDialog.Builder(this)
 
+        builder.setMessage("text: ${rawResult!!.text})")
+        builder.setPositiveButton("YES"){dialog, which ->
+            scannerView!!.resumeCameraPreview(this)
+        }
 
-        onBackPressed()
+        builder.create().show()
 
-        // If you would like to resume scanning, call this method below:
-        //mScannerView.resumeCameraPreview(this);
+        //onBackPressed()
     }
 }
