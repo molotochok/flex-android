@@ -29,12 +29,21 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    // public methods
     fun openScanReader(view: View){
         if (permissionService.checkAndRequestPermissions()){
             openActivity(ScanActivity::class)
         }
     }
 
+    // TODO: REMOVE
+    fun openVideoPlayer(videe: View) {
+        openActivity(VideoActivity::class)
+    }
+
+
+    // private methods
     private fun<T> openActivity(activityClass: KClass<T>) where T: Activity {
         val intent = Intent(this, activityClass.java)
         startActivity(intent)
