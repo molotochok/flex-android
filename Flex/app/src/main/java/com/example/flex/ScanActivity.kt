@@ -1,11 +1,9 @@
 package com.example.flex
 
-import android.location.Address
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
-import com.example.flex.Models.Flex
-import com.example.flex.Models.Server
+import com.example.flex.models.Server
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.Result
 import me.dm7.barcodescanner.zxing.ZXingScannerView

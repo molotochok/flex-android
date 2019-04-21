@@ -1,4 +1,4 @@
-package com.example.flex.Fragments
+package com.example.flex.fragments
 
 import android.content.Context
 import android.net.Uri

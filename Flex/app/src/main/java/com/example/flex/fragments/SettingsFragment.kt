@@ -1,4 +1,4 @@
-package com.example.flex.Fragments
+package com.example.flex.fragments
 
 import android.content.Context
 import android.net.Uri
@@ -9,8 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.flex.R
 
-
-class LibraryFragment : Fragment() {
+class SettingsFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +22,7 @@ class LibraryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_library, container, false)
+        return inflater.inflate(R.layout.fragment_settings, container, false)
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -68,12 +67,12 @@ class LibraryFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment LibraryFragment.
+         * @return A new instance of fragment SettingsFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            LibraryFragment().apply {
+        fun newInstance() =
+            SettingsFragment().apply {
                 arguments = Bundle().apply {}
             }
     }

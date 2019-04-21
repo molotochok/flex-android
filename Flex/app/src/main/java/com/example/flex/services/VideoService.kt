@@ -1,4 +1,4 @@
-package com.example.flex.Services
+package com.example.flex.services
 
 import android.content.Context
 import android.net.Uri

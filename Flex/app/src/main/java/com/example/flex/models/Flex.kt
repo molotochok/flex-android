@@ -1,4 +1,4 @@
-package com.example.flex.Models
+package com.example.flex.models
 
 class Flex {
     var name: String ?= null

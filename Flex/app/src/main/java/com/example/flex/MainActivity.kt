@@ -9,11 +9,10 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.widget.SearchView
-import com.example.flex.Fragments.DownloadsFragment
-import com.example.flex.Fragments.LibraryFragment
-import com.example.flex.Fragments.SettingsFragment
+import com.example.flex.fragments.DownloadsFragment
+import com.example.flex.fragments.LibraryFragment
+import com.example.flex.fragments.SettingsFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity(), LibraryFragment.OnFragmentInteractionListener, SettingsFragment.OnFragmentInteractionListener, DownloadsFragment.OnFragmentInteractionListener {
     override fun onFragmentInteraction(uri: Uri) {

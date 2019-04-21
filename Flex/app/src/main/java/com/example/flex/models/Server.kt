@@ -1,4 +1,4 @@
-package com.example.flex.Models
+package com.example.flex.models
 
 class Server {
     var flex: Flex ?= null
