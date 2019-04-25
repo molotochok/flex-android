@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.View
@@ -51,6 +52,7 @@ class MainActivity : AppCompatActivity(), LibraryFragment.OnFragmentInteractionL
         if (menu != null) {
             (menu.findItem(R.id.search).actionView as SearchView).apply {
                 setSearchableInfo(searchManager.getSearchableInfo(componentName))
+                setIconifiedByDefault(false)
             }
         }
 
