@@ -1,53 +1,29 @@
 package com.example.flex.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.example.flex.R
+import com.example.flex.VideoActivity
 import com.example.flex.adapters.RvAdapter
-import com.example.flex.models.TestModel
+import com.example.flex.decorators.MarginItemDecoration
+import com.example.flex.models.Movie
+import kotlinx.android.synthetic.main.adapter_item_layout.view.*
 import kotlinx.android.synthetic.main.fragment_library.*
 import kotlinx.android.synthetic.main.fragment_library.view.*
 
 
 class LibraryFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
-
-    //TODO: remove this
-    private fun createTempList(root: View){
-        var data = ArrayList<TestModel>()
-        data.add(TestModel("KEKISH", 1))
-        data.add(TestModel("JOHNY", 3))
-        data.add(TestModel("Elisasfa", 5))
-        data.add(TestModel("testins", 4))
-        data.add(TestModel("The lord of the rings", 3))
-        data.add(TestModel("The battle for middle eath", 2))
-        data.add(TestModel("KEKISH", 1))
-        data.add(TestModel("JOHNY", 3))
-        data.add(TestModel("Elisasfa", 5))
-        data.add(TestModel("testins", 4))
-        data.add(TestModel("The lord of the rings", 3))
-        data.add(TestModel("The battle for middle eath", 2))
-        data.add(TestModel("KEKISH", 1))
-        data.add(TestModel("JOHNY", 3))
-        data.add(TestModel("Elisasfa", 5))
-        data.add(TestModel("testins", 4))
-        data.add(TestModel("The lord of the rings", 3))
-        data.add(TestModel("The battle for middle eath", 2))
-
-        val rvAdapter = RvAdapter(data)
-
-        val recyclerView = root.findViewById<RecyclerView>(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayout.VERTICAL, false)
-        recyclerView.adapter = rvAdapter
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,8 +38,11 @@ class LibraryFragment : Fragment() {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_library, container, false)
 
-        //TODO: remove this
-        createTempList(root)
+        root.recyclerView.addItemDecoration(
+             MarginItemDecoration(resources.getDimension(R.dimen.recyclerView_margin).toInt())
+         )
+
+        initMediaList(root)
 
         return root
     }
@@ -103,6 +82,52 @@ class LibraryFragment : Fragment() {
         fun onFragmentInteraction(uri: Uri)
     }
 
+    // Private methods
+    // TODO: Refactor this: move this to new class
+    private fun getMediaList() : ArrayList<Movie>{
+        var mediaList = ArrayList<Movie>()
+        mediaList.add(
+            Movie(1,
+                "The lord of the rings",
+                duration = 190.2,
+                resolution = "1080p",
+                size="10.21 GiB",
+                posterPath = "https://i.imgur.com/6ATuUKH.jpg"))
+        mediaList.add(
+            Movie(2,
+                "Wall-e",
+                duration = 190.2,
+                resolution = "1080p",
+                size="5.15 GiB",
+                posterPath = "https://i.imgur.com/VD8TMkx.jpg"))
+        mediaList.add(
+            Movie(3,
+                "Happy Boi",
+                duration = 1.02,
+                resolution = "1080p",
+                size="150 Mb",
+                posterPath = "https://i.imgur.com/H981AN7.jpg"))
+
+        return mediaList
+    }
+
+    fun onkek(view: View){
+
+    }
+
+    // Initializes recycleView with cardViews, which represents movie, audio, etc
+    private fun initMediaList(root: View){
+        val recyclerView = root.findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayout.VERTICAL, false)
+
+        var data = getMediaList()
+
+        val rvAdapter = RvAdapter(data)
+        recyclerView.adapter = rvAdapter
+    }
+
+
+    // Companion objects
     companion object {
         /**
          * Use this factory method to create a new instance of

@@ -15,28 +15,27 @@ import org.jetbrains.anko.info
 
 
 enum class SourceType {
-    LOCAL_AUDIO, LOCAL_VIDEO, HTTP_AUDIO, HTTP_VIDEO, PLAYLIST;
+    LOCAL_AUDIO, LOCAL_VIDEO, HTTP_AUDIO, HTTP_VIDEO;
 }
 
 data class PlayerState(var window: Int = 0,
                        var position: Long = 0,
                        var whenReady: Boolean = true,
-                       var sourceType: SourceType = SourceType.PLAYLIST)
+                       var sourceType: SourceType = SourceType.HTTP_VIDEO)
 
 class VideoService(val context: Context,
                    val playerView: PlayerView,
-                   val playerState: PlayerState) : AnkoLogger {
+                   val playerState: PlayerState,
+                   val index: Int) : AnkoLogger {
 
 
     // fields
-    private val mediaMap = mapOf<SourceType, Uri>(
-        SourceType.LOCAL_AUDIO to Uri.parse("asset:///audio.mp3"),
-        SourceType.LOCAL_VIDEO to Uri.parse("asset:///video.mp4"),
-        SourceType.HTTP_AUDIO to Uri.parse("https://ccrma.stanford.edu/~jos/mp3/gtr-wah.mp3"),
-        SourceType.HTTP_VIDEO to Uri.parse("http://techslides.com/demos/sample-videos/small.mp4")
+    private val mediaMap = mapOf<Int, Uri>(
+        1 to Uri.parse("http://www.html5videoplayer.net/videos/toystory.mp4"),
+        2 to Uri.parse("asset:///video.mp4"),
+        3 to Uri.parse("asset:///1280.mp4")
     )
     private val player: ExoPlayer
-
     // constructor
     init {
         // Create the player instance.
@@ -49,7 +48,7 @@ class VideoService(val context: Context,
 
     fun start() {
         // Load media.
-        player.prepare(buildMediaSource(playerState.sourceType))
+        player.prepare(buildMediaSource(index))
         // Restore state (after onResume()/onStart())
         with(playerState) {
             // Start playback when media has buffered enough
@@ -88,28 +87,9 @@ class VideoService(val context: Context,
         info { "SimpleExoPlayer is released" }
     }
 
-    fun buildMediaSource(sourceType: SourceType): MediaSource {
-        return when (sourceType) {
-            SourceType.PLAYLIST -> {
-                val source = DynamicConcatenatingMediaSource();
-
-                source.addMediaSource(createExtractorMediaSource(SourceType.LOCAL_AUDIO))
-                source.addMediaSource(createExtractorMediaSource(SourceType.LOCAL_VIDEO))
-                source.addMediaSource(createExtractorMediaSource(SourceType.HTTP_AUDIO))
-                source.addMediaSource(createExtractorMediaSource(SourceType.HTTP_VIDEO))
-
-                source
-            }
-            else -> {
-                createExtractorMediaSource(sourceType)
-            }
-        }
-    }
-
-
     // Private methods
-    private fun createExtractorMediaSource(sourceType: SourceType): MediaSource {
+    private fun buildMediaSource(index: Int): MediaSource {
         return ExtractorMediaSource.Factory(DefaultDataSourceFactory(context, "flex"))
-            .createMediaSource(mediaMap[sourceType])
+            .createMediaSource(mediaMap[index])
     }
 }

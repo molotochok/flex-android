@@ -36,12 +36,9 @@ class FirstActivity : AppCompatActivity() {
             openActivity(ScanActivity::class)
         }
     }
-
-    // TODO: REMOVE
-    fun openVideoPlayer(videe: View) {
-        openActivity(VideoActivity::class)
+    fun openMainActivity(view: View){
+        openActivity(MainActivity::class)
     }
-
 
     // private methods
     private fun<T> openActivity(activityClass: KClass<T>) where T: Activity {

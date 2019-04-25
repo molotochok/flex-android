@@ -1,21 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
-    <LinearLayout
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="openVideoPlayer">
+
+    <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
-
+            android:layout_height="match_parent">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="181dp" tools:srcCompat="@tools:sample/backgrounds/scenic"
+                android:id="@+id/moviePoster"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" android:scaleType="center"
+                app:layout_constraintHorizontal_bias="0.0"
+                android:cropToPadding="false" android:adjustViewBounds="false"/>
         <TextView
-                android:id="@+id/tvName"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                android:text="1 hr 42 min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/movieDuration"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/movieName"
+                app:layout_constraintVertical_bias="1.0"/>
         <TextView
-                android:id="@+id/tvCount"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-
-    </LinearLayout>
+                android:text="•"
+                android:layout_width="2dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textDivider1"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/movieDuration" android:layout_marginStart="4dp"/>
+        <TextView
+                android:text="•"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textDivider"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/movieResolution"
+                android:layout_marginStart="4dp"/>
+        <TextView
+                android:text="1080p"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/movieResolution"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textDivider1"
+                android:layout_marginStart="4dp" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/movieName"/>
+        <TextView
+                android:text="10,21 GiB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/movieSize"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" app:layout_constraintStart_toEndOf="@+id/textDivider"
+                android:layout_marginStart="4dp" app:layout_constraintHorizontal_bias="0.0"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/movieName"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@drawable/save_icon"
+                android:id="@+id/movieDownload"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@+id/moviePoster"
+                app:layout_constraintStart_toEndOf="@+id/movieName" android:layout_marginStart="8dp"
+                app:layout_constraintHorizontal_bias="0.69"/>
+        <TextView
+                android:text="The Lord of the rings the battle for middle earth 2 So that is true shit kids"
+                android:layout_width="275dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/movieName"
+                android:maxLines="2" android:maxWidth="275dp" android:ellipsize="end"
+                android:textAppearance="@style/TextAppearance.AppCompat" android:textSize="24sp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/moviePoster" android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+                android:text="movieIndex"
+                android:layout_width="16dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/movieIndex" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" android:textSize="12sp" android:layout_marginEnd="12dp"
+                android:layout_marginBottom="8dp" android:visibility="invisible"/>
+    </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

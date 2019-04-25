@@ -16,7 +16,9 @@ class VideoActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video)
 
-        videoService = VideoService(this, exoplayerview_activity_video, state)
+        val index = intent.getIntExtra("index", 0)
+
+        videoService = VideoService(this, exoplayerview_activity_video, state, index)
     }
 
 
