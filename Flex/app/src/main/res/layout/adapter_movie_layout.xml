@@ -89,10 +89,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/moviePoster" android:layout_marginStart="16dp"
                 app:layout_constraintStart_toStartOf="parent"/>
         <TextView
-                android:text="movieIndex"
+                android:text="movieId"
                 android:layout_width="16dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/movieIndex" app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/movieId" app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" android:textSize="12sp" android:layout_marginEnd="12dp"
                 android:layout_marginBottom="8dp" android:visibility="invisible"/>
     </android.support.constraint.ConstraintLayout>

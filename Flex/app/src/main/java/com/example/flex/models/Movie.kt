@@ -1,12 +1,11 @@
 package com.example.flex.models
 
-import java.time.Duration
-
 data class Movie (
-    val index: Int,
+    val id: Int,
     val name: String,
     val duration : Double,
     val resolution : String,
     val size: String,
-    val posterPath: String
-)
+    val posterPath: String,
+    override val mediaType: MediaType = MediaType.Movie
+) : Media(mediaType)

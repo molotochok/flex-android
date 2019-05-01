@@ -16,7 +16,7 @@ import com.example.flex.fragments.DownloadsFragment
 import com.example.flex.fragments.LibraryFragment
 import com.example.flex.fragments.SettingsFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.adapter_item_layout.view.*
+import kotlinx.android.synthetic.main.adapter_movie_layout.view.*
 import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity(), LibraryFragment.OnFragmentInteractionListener, SettingsFragment.OnFragmentInteractionListener, DownloadsFragment.OnFragmentInteractionListener {
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity(), LibraryFragment.OnFragmentInteractionL
     fun openVideoPlayer(view: View){
         val intent = Intent(this, VideoActivity::class.java)
 
-        intent.putExtra("index", view.movieIndex.text.toString().toInt())
+        intent.putExtra("index", view.movieId.text.toString().toInt())
 
         startActivity(intent)
     }

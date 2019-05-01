@@ -10,20 +10,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3521d920-ee55-49df-b3df-78d3554e8866" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/refresh_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/refresh_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/refresh_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/refresh_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/refresh_icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/ic_icon-web.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/ic_launcher-web.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Folder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Media.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/adapter_folder_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/ic_launcher_background.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/flex/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/flex/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/flex/SearchActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/flex/SearchActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_blank.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/navigation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/options_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/options_menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/flex/adapters/RvAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/flex/adapters/RvAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/flex/fragments/LibraryFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/flex/fragments/LibraryFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Movie.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Movie.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/adapter_item_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/adapter_movie_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -92,52 +107,53 @@
     <session id="-2052744116">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.closed" value="14" />
+          <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="3" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.16" value="2" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="3" />
+          <entry key="class" value="5" />
           <entry key="gradle" value="5" />
-          <entry key="java" value="12" />
-          <entry key="kt" value="45" />
-          <entry key="png" value="11" />
-          <entry key="xml" value="83" />
+          <entry key="java" value="14" />
+          <entry key="kt" value="66" />
+          <entry key="png" value="19" />
+          <entry key="xml" value="100" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="3" />
+          <entry key="CLASS" value="5" />
           <entry key="Groovy" value="5" />
-          <entry key="Image" value="11" />
-          <entry key="JAVA" value="12" />
-          <entry key="Kotlin" value="45" />
-          <entry key="XML" value="83" />
+          <entry key="Image" value="19" />
+          <entry key="JAVA" value="14" />
+          <entry key="Kotlin" value="66" />
+          <entry key="XML" value="100" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="16" />
           <entry key="gradle" value="270" />
-          <entry key="java" value="17" />
-          <entry key="kt" value="6661" />
-          <entry key="txt" value="527" />
-          <entry key="xml" value="2696" />
+          <entry key="java" value="42" />
+          <entry key="kt" value="9439" />
+          <entry key="txt" value="651" />
+          <entry key="xml" value="2847" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="270" />
-          <entry key="JAVA" value="17" />
-          <entry key="Kotlin" value="6661" />
-          <entry key="PLAIN_TEXT" value="543" />
-          <entry key="XML" value="2696" />
+          <entry key="JAVA" value="42" />
+          <entry key="Kotlin" value="9439" />
+          <entry key="PLAIN_TEXT" value="667" />
+          <entry key="XML" value="2847" />
         </counts>
       </usages-collector>
     </session>
@@ -145,116 +161,95 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/MainActivity.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/fragments/LibraryFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
+            <state relative-caret-position="359">
+              <caret line="139" column="18" selection-start-line="139" selection-start-column="18" selection-end-line="139" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/navigation.xml">
-          <provider editor-type-id="android-designer2" />
+        <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/21508dd93851c411ba5305b31c016530/jars/classes.jar!/android/support/v4/app/Fragment.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-              <folding>
-                <element signature="e#621#645#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="385">
+              <caret line="1141" selection-start-line="1141" selection-end-line="1141" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_search.xml">
-          <provider editor-type-id="android-designer2" />
+        <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/21508dd93851c411ba5305b31c016530/jars/classes.jar!/android/support/v4/app/FragmentManagerImpl.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-              <folding>
-                <element signature="e#383#423#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/ScanActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/options_menu.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-              <folding>
-                <element signature="e#265#288#0" expanded="true" />
-                <element signature="e#582#604#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/searchable.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="24" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="24" />
-              <folding>
-                <element signature="e#137#155#0" expanded="true" />
-                <element signature="e#181#202#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="14" column="49" lean-forward="true" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
-              <folding>
-                <element signature="e#407#425#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="android-manifest" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state relative-caret-position="96">
+              <caret line="753" column="46" selection-start-line="753" selection-start-column="46" selection-end-line="753" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/SearchActivity.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/adapters/RvAdapter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+            <state relative-caret-position="325">
+              <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
               <folding>
-                <element signature="e#26#193#0" expanded="true" />
+                <element signature="e#36#345#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Folder.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="7" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Movie.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/adapter_movie_layout.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Media.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Flex.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Server.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -265,6 +260,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Kotlin Interface" />
         <option value="layoutResourceFile" />
         <option value="Kotlin Class" />
       </list>
@@ -276,6 +272,9 @@
       <find>navigation</find>
       <find>searchAct</find>
       <find>searchActivity</find>
+      <find>ViewHolder</find>
+      <find>folderRes</find>
+      <find>movie</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Markiian\AndroidStudioProjects\Flex\Flex\app\src\main\res\drawable-hdpi</dir>
@@ -2666,8 +2665,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/VideoActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Movie.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/adapters/RvAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/services/VideoService.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/fragments/SettingsFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/FirstActivity.kt" />
@@ -2675,24 +2672,34 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_library.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/decorators/MarginItemDecoration.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/adapter_item_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/fragments/LibraryFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/navigation.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/searchable.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/ScanActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_search.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/options_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/SearchActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/adapters/RvFolderAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Folder.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/adapters/RvFolderAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/adapter_item_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/MainActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_test.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/adapters/RvMovieAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/adapter_movie_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/adapter_folder_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Media.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Folder.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Movie.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/fragments/LibraryFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/flex/adapters/RvAdapter.kt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="262" />
-    <option name="y" value="20" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1057" />
   </component>
@@ -2704,17 +2711,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
               <item name="Flex" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="Flex" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
             </path>
             <path>
               <item name="Flex" type="1abcf292:AndroidViewProjectNode" />
@@ -2730,13 +2735,28 @@
             <path>
               <item name="Flex" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="flex" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="adapters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Flex" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="flex" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="fragments" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Flex" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="flex" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Flex" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="Flex" type="1abcf292:AndroidViewProjectNode" />
@@ -2748,13 +2768,14 @@
               <item name="Flex" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="menu" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="mipmap" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="Flex" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="xml" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="mipmap" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="ic_launcher" type="c431d0b8:AndroidResGroupNode" />
             </path>
             <path>
               <item name="Flex" type="1abcf292:AndroidViewProjectNode" />
@@ -2764,9 +2785,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2913,27 +2931,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14392324" />
+      <window_info id="Captures" order="0" sideWeight="0.15151516" side_tool="true" visible="true" weight="0.14392324" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.8484849" visible="true" weight="0.14392324" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Designer" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Thumbnails" sideWeight="0.49946696" weight="0.32939914" />
       <window_info anchor="bottom" id="Run" order="0" sideWeight="0.4978678" weight="0.31866953" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.4989339" weight="0.36266094" />
-      <window_info anchor="bottom" id="TODO" order="2" sideWeight="0.4989339" weight="0.32939914" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="1" sideWeight="0.6226013" visible="true" weight="0.36266094" />
+      <window_info anchor="bottom" id="TODO" order="2" sideWeight="0.49840087" weight="0.32939914" />
       <window_info anchor="bottom" id="Android Profiler" order="3" sideWeight="0.49946696" weight="0.32939914" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.38948497" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49946696" weight="0.38948497" />
       <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.49946696" weight="0.32939914" />
-      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.36695278" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50159913" side_tool="true" weight="0.32939914" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49946696" weight="0.32939914" />
-      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.49626866" weight="0.36695278" />
-      <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49840087" weight="0.26609442" />
+      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.8933902" weight="0.1416309" />
+      <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49733475" weight="0.26609442" />
+      <window_info anchor="bottom" id="Thumbnails" order="10" sideWeight="0.49946696" weight="0.32939914" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
@@ -2982,122 +2999,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/settings_icon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/settings_icon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/download_icon.png" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/download_icon.png" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/44936ec7c3edc229842b46f5c87f0e52/jars/classes.jar!/android/support/v7/view/menu/MenuBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="496" selection-start-line="496" selection-end-line="496" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/Android/android-sdk/sources/android-28/android/os/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/fragments/DownloadsFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/Models/TestModel.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Flex.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Server.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/services/PermissionService.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/fragments/BlankFragment.kt" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/21508dd93851c411ba5305b31c016530/jars/classes.jar!/android/support/v4/app/FragmentManagerImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="1601" selection-start-line="1601" selection-end-line="1601" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/VideoActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="20" column="84" selection-start-line="20" selection-start-column="84" selection-end-line="20" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/services/VideoService.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="33" column="75" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/fragments/SettingsFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding>
-            <element signature="e#36#269#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Movie.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/FirstActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="38" column="24" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/adapters/RvAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="37" column="89" selection-start-line="37" selection-start-column="89" selection-end-line="37" selection-end-column="89" />
         </state>
       </provider>
     </entry>
@@ -3108,23 +3013,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/fragments/LibraryFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="41" column="74" selection-start-line="41" selection-start-column="74" selection-end-line="41" selection-end-column="74" />
-          <folding>
-            <element signature="e#36#815#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/decorators/MarginItemDecoration.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-          <folding>
-            <element signature="e#37#136#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3154,99 +3046,73 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_first.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="524">
           <caret line="67" column="42" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_video.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/adapter_item_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="41" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_blank.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_library.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_blank.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml">
-      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_downloads.xml">
-      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/navigation.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_search.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/ScanActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="306">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_search.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/options_menu.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-          <folding>
-            <element signature="e#383#423#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/searchable.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
+        <state relative-caret-position="68">
           <caret line="4" column="24" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="24" />
-          <folding>
-            <element signature="e#137#155#0" expanded="true" />
-            <element signature="e#181#202#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3257,53 +3123,156 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/navigation.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding>
-            <element signature="e#621#645#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/options_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-          <folding>
-            <element signature="e#265#288#0" expanded="true" />
-            <element signature="e#582#604#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="14" column="49" lean-forward="true" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
-          <folding>
-            <element signature="e#407#425#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/SearchActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        <state relative-caret-position="487">
+          <caret line="22" column="66" lean-forward="true" selection-start-line="22" selection-start-column="66" selection-end-line="22" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_library.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/adapters/RvFolderAdapter.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Folder.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/IMedia.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/adapters/RvFolderAdapter.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_test.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="38" selection-start-column="38" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/adapter_folder_layout.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/adapter_movie_layout.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Folder.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Server.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Flex.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Media.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/models/Movie.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/fragments/LibraryFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="139" column="18" selection-start-line="139" selection-start-column="18" selection-end-line="139" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/21508dd93851c411ba5305b31c016530/jars/classes.jar!/android/support/v4/app/FragmentManagerImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="753" column="46" selection-start-line="753" selection-start-column="46" selection-end-line="753" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/21508dd93851c411ba5305b31c016530/jars/classes.jar!/android/support/v4/app/Fragment.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="1141" selection-start-line="1141" selection-end-line="1141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/flex/adapters/RvAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
           <folding>
-            <element signature="e#26#193#0" expanded="true" />
+            <element signature="e#36#345#0" expanded="true" />
           </folding>
         </state>
       </provider>
