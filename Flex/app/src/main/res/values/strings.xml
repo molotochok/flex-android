@@ -11,4 +11,19 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="refresh_title">Refresh Title</string>
     <string name="search_title">Search Title</string>
+    <string name="dot">•</string>
+    <string name="movieDurationExample">1 hr 42 min</string>
+    <string name="movieResolutionExample">1080p</string>
+    <string name="movieSizeExample">10,21 GiB</string>
+    <string name="movieNameExample">The Lord of the rings the battle for middle earth 2 So that is true shit kids
+    </string>
+    <string name="movieIdExample">movieId</string>
+    <string name="moviePosterDescription">moviePoster</string>
+    <string name="downloadDescription">downloadButton</string>
+    <string name="folderSizeExample">183 items</string>
+    <string name="folderNameExample">Folder example</string>
+    <string name="folderIdExample">folderId</string>
+    <string name="folderPosterDescription">folderPoster</string>
+    <string name="folderDownloadDescrption">folderDownload</string>
+    <string name="folderIconDescription">folderIcon</string>
 </resources>

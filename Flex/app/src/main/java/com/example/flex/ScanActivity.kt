@@ -1,8 +1,8 @@
 package com.example.flex
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
+import androidx.appcompat.app.AlertDialog
 import com.example.flex.models.Server
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.Result

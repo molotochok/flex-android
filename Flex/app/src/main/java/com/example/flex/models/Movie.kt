@@ -7,5 +7,5 @@ data class Movie (
     val resolution : String,
     val size: String,
     val posterPath: String,
-    override val mediaType: MediaType = MediaType.Movie
+    override val mediaType: MediaType = MediaType.MOVIE
 ) : Media(mediaType)

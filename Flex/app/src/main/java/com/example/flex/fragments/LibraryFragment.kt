@@ -1,11 +1,12 @@
 package com.example.flex.fragments
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,16 +17,16 @@ import com.example.flex.decorators.MarginItemDecoration
 import com.example.flex.models.Folder
 import com.example.flex.models.Media
 import com.example.flex.models.Movie
+import com.ncapdevi.fragnav.FragNavController
 import kotlinx.android.synthetic.main.fragment_library.view.*
 
 
-class LibraryFragment : Fragment() {
+class LibraryFragment @SuppressLint("ValidFragment") constructor(private var index: Int = 0) : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {}
-
     }
 
     override fun onCreateView(
@@ -39,7 +40,7 @@ class LibraryFragment : Fragment() {
              MarginItemDecoration(resources.getDimension(R.dimen.recyclerView_margin).toInt())
          )
 
-        initMediaList(root)
+        updateMediaList(root)
 
         return root
     }
@@ -63,6 +64,16 @@ class LibraryFragment : Fragment() {
         listener = null
     }
 
+    fun updateMediaList(root: View){
+        val recyclerView = root.findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView.layoutManager =LinearLayoutManager(activity, LinearLayout.VERTICAL, false)
+
+        val data = getMediaList(index)
+
+        val rvAdapter = RvAdapter(data)
+        recyclerView.adapter = rvAdapter
+    }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -80,51 +91,49 @@ class LibraryFragment : Fragment() {
     }
 
     // Private methods
-    // TODO: Refactor this: move this to new class
-    private fun getMediaList() : ArrayList<Media>{
-        var mediaList = ArrayList<Media>()
-
-        mediaList.add(
+    private var mediaList = arrayListOf<ArrayList<Media>>(
+        arrayListOf<Media>(
             Folder(1,
-                "Folder example",
-                posterPath = "https://i.imgur.com/6ATuUKH.jpg")
-        )
-        mediaList.add(
+                "FOLDER example asd as das dasd asd ;lasd ;aspof oapsmf pasfm aslmf opas",
+                posterPath = "https://i.imgur.com/6ATuUKH.jpg"),
             Movie(1,
-                "The lord of the rings",
+                "The lord of the ringsCASCASCASASCASCSACASCSACASCSACASCASCASCASCA",
                 duration = 190.2,
                 resolution = "1080p",
                 size="10.21 GiB",
-                posterPath = "https://i.imgur.com/6ATuUKH.jpg"))
-        mediaList.add(
+                posterPath = "https://i.imgur.com/6ATuUKH.jpg"),
             Movie(2,
                 "Wall-e",
                 duration = 190.2,
                 resolution = "1080p",
                 size="5.15 GiB",
-                posterPath = "https://i.imgur.com/VD8TMkx.jpg"))
-        mediaList.add(
+                posterPath = "https://i.imgur.com/VD8TMkx.jpg"),
             Movie(3,
                 "Happy Boi",
                 duration = 1.02,
                 resolution = "1080p",
                 size="150 Mb",
-                posterPath = "https://i.imgur.com/H981AN7.jpg"))
+                posterPath = "https://i.imgur.com/H981AN7.jpg")
+        ),
+        arrayListOf<Media>(
+            Movie(3,
+                "Happy Boi",
+                duration = 1.02,
+                resolution = "1080p",
+                size="150 Mb",
+                posterPath = "https://i.imgur.com/H981AN7.jpg"),
+            Folder(1,
+                "FOLDER example asd as das dasd asd ;lasd ;aspof oapsmf pasfm aslmf opas",
+                posterPath = "https://i.imgur.com/6ATuUKH.jpg")
+            )
+    )
 
-        return mediaList
+    // TODO: Refactor this: move this to new class
+    private fun getMediaList(index:Int) : ArrayList<Media>{
+        return mediaList[index]
     }
 
     // Initializes recycleView with cardViews, which represents movie, audio, etc
-    private fun initMediaList(root: View){
-        val recyclerView = root.findViewById<RecyclerView>(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayout.VERTICAL, false)
-
-        val data = getMediaList()
-
-        val rvAdapter = RvAdapter(data)
-        recyclerView.adapter = rvAdapter
-    }
-
 
     // Companion objects
     companion object {
