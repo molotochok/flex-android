@@ -1,45 +1,23 @@
 package com.example.flex.services
 
+import android.app.Activity
 import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.FragmentManager
-import com.example.flex.MainActivity
 import com.example.flex.R
-import com.example.flex.fragments.DownloadsFragment
 import com.example.flex.fragments.FragmentType
-import com.example.flex.fragments.LibraryFragment
-import com.example.flex.fragments.SettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ncapdevi.fragnav.FragNavController
-import com.ncapdevi.fragnav.FragNavTransactionOptions
 
 // Service which helps managing fragments
-class FragmentService(supportFragmentManager: FragmentManager) {
+abstract class FragmentService(supportFragmentManager: FragmentManager, private val fragments : List<Fragment>) {
 
-    private val fragments = listOf(
-        LibraryFragment(),
-        DownloadsFragment(),
-        SettingsFragment()
-    )
-
-    private var fragNavController: FragNavController = FragNavController(supportFragmentManager, R.id.container)
+    protected var fragNavController: FragNavController = FragNavController(supportFragmentManager, R.id.container)
 
     //region Public Methods
-    fun init(activity : MainActivity, savedInstanceState : Bundle?){
-        fragNavController.apply {
-            transactionListener = activity
-            createEager = true
-            rootFragments = fragments
-            defaultTransactionOptions = FragNavTransactionOptions.newBuilder()
-                .customAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right)
-                .build()
-            fragmentHideStrategy = FragNavController.DETACH_ON_NAVIGATE_HIDE_ON_SWITCH
-        }
-
-        fragNavController.initialize(FragmentType.LIBRARY.value, savedInstanceState)
-    }
+    abstract fun init(activity : Activity, savedInstanceState : Bundle?)
 
     fun setDisplayHomeAsUpEnabled(supportActionBar: ActionBar?){
         supportActionBar!!.setDisplayHomeAsUpEnabled(fragNavController.isRootFragment.not())

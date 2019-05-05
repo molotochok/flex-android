@@ -10,7 +10,15 @@ import com.example.flex.services.PermissionService
 import kotlin.reflect.KClass
 
 class FirstActivity : AppCompatActivity() {
-    private val permissionService = PermissionService(this, Manifest.permission.CAMERA)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_first)
+    }
+
+
+    // For qr code
+    /*private val permissionService = PermissionService(this, Manifest.permission.CAMERA)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,5 +52,5 @@ class FirstActivity : AppCompatActivity() {
     private fun<T> openActivity(activityClass: KClass<T>) where T: Activity {
         val intent = Intent(this, activityClass.java)
         startActivity(intent)
-    }
+    }*/
 }

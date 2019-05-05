@@ -21,6 +21,7 @@ import com.ncapdevi.fragnav.FragNavController
 import androidx.fragment.app.Fragment
 import com.example.flex.fragments.FragmentType
 import com.example.flex.services.FragmentService
+import com.example.flex.services.MainFragmentService
 import com.ncapdevi.fragnav.FragNavTransactionOptions
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -31,7 +32,13 @@ class MainActivity : AppCompatActivity(),
     FragNavController.TransactionListener
 {
     //region Dependencies
-    private val fragmentService = FragmentService(supportFragmentManager)
+    private val fragments = listOf(
+        LibraryFragment(),
+        DownloadsFragment(),
+        SettingsFragment()
+    )
+
+    private val fragmentService = MainFragmentService(supportFragmentManager, fragments)
     //endregion
 
     //region FragNavController.TransactionListener Implementation

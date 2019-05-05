@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorAccent">#1976D2</color>
     <color name="libraryBackground">#e4e4e4</color>
+    <color name="get_started_btn_pressed">#D5D4D4</color>
 </resources>

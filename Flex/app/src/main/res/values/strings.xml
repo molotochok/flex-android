@@ -26,4 +26,8 @@
     <string name="folderPosterDescription">folderPoster</string>
     <string name="folderDownloadDescrption">folderDownload</string>
     <string name="folderIconDescription">folderIcon</string>
+    <string name="get_started_text">GET STARTED</string>
+    <string name="stream_media_text">Stream your media for free on any device, with minimal effort</string>
+    <string name="flex_media_text">Flex your media library</string>
+    <string name="inapp_icon_description">inapp icon description</string>
 </resources>
