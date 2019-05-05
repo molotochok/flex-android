@@ -3,11 +3,8 @@ package com.example.flex
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
@@ -19,10 +16,7 @@ import com.example.flex.fragments.LibraryFragment
 import com.example.flex.fragments.SettingsFragment
 import com.ncapdevi.fragnav.FragNavController
 import androidx.fragment.app.Fragment
-import com.example.flex.fragments.FragmentType
 import com.example.flex.services.FragmentService
-import com.example.flex.services.MainFragmentService
-import com.ncapdevi.fragnav.FragNavTransactionOptions
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(),
@@ -38,7 +32,7 @@ class MainActivity : AppCompatActivity(),
         SettingsFragment()
     )
 
-    private val fragmentService = MainFragmentService(supportFragmentManager, fragments)
+    private val fragmentService = FragmentService(supportFragmentManager, fragments)
     //endregion
 
     //region FragNavController.TransactionListener Implementation

@@ -8,6 +8,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onGetStartedBtnClicked"
                 android:stateListAnimator="@null"
                 android:textColor="#5b5b5b"
                 android:background="@drawable/get_started_btn"

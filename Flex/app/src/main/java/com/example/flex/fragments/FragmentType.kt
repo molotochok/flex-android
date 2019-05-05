@@ -5,5 +5,6 @@ enum class FragmentType(val value:Int)
     LIBRARY(0),
     DOWNLOADS(1),
     SETTINGS(2),
-    WELCOME1(3)
+    WELCOME1(3),
+    WELCOME2(4)
 }

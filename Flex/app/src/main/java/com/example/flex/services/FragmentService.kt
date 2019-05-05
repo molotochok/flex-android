@@ -10,14 +10,32 @@ import com.example.flex.R
 import com.example.flex.fragments.FragmentType
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ncapdevi.fragnav.FragNavController
+import com.ncapdevi.fragnav.FragNavTransactionOptions
 
 // Service which helps managing fragments
-abstract class FragmentService(supportFragmentManager: FragmentManager, private val fragments : List<Fragment>) {
+class FragmentService(supportFragmentManager: FragmentManager, private val fragments : List<Fragment>) {
 
-    protected var fragNavController: FragNavController = FragNavController(supportFragmentManager, R.id.container)
+    private var fragNavController: FragNavController = FragNavController(supportFragmentManager, R.id.container)
 
     //region Public Methods
-    abstract fun init(activity : Activity, savedInstanceState : Bundle?)
+    fun init(activity : FragNavController.TransactionListener, savedInstanceState : Bundle?) {
+        fragNavController.apply {
+            transactionListener = activity
+            createEager = true
+            rootFragments = fragments
+            defaultTransactionOptions = FragNavTransactionOptions.newBuilder()
+                .customAnimations(
+                    R.anim.enter_from_right,
+                    R.anim.exit_to_left,
+                    R.anim.enter_from_left,
+                    R.anim.exit_to_right
+                )
+                .build()
+            fragmentHideStrategy = FragNavController.DETACH_ON_NAVIGATE_HIDE_ON_SWITCH
+        }
+
+        fragNavController.initialize(FragNavController.TAB1, savedInstanceState)
+    }
 
     fun setDisplayHomeAsUpEnabled(supportActionBar: ActionBar?){
         supportActionBar!!.setDisplayHomeAsUpEnabled(fragNavController.isRootFragment.not())

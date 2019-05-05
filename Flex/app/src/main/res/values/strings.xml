@@ -30,4 +30,16 @@
     <string name="stream_media_text">Stream your media for free on any device, with minimal effort</string>
     <string name="flex_media_text">Flex your media library</string>
     <string name="inapp_icon_description">inapp icon description</string>
+    <string name="linux_icon_description">linux icon</string>
+    <string name="setup_flex_text">Setup your flex server</string>
+    <string name="download_flex_text">Download the flex server on your desktop from our website and follow the
+        instructions
+    </string>
+    <string name="available_for_text">Available for Windows, Linux and MacOs</string>
+    <string name="apple_icon_description">apple_icon</string>
+    <string name="windows_icon_decription">windows_icon</string>
+    <string name="visit_desktop_text">Visit on your desktop</string>
+    <string name="flex_url">https://flex.github.io</string>
+    <string name="back_button_description">back button</string>
+    <string name="next_button_description">next_button</string>
 </resources>
