@@ -10,7 +10,7 @@
         <androidx.appcompat.widget.AppCompatButton
                 android:onClick="onGetStartedBtnClicked"
                 android:stateListAnimator="@null"
-                android:textColor="#5b5b5b"
+                android:textColor="#1775CF"
                 android:background="@drawable/get_started_btn"
                 android:text="@string/get_started_text"
                 android:layout_width="124dp"
