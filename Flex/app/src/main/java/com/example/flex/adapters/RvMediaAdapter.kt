@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.flex.adapters.ViewHolders.FolderViewHolder
+import com.example.flex.adapters.ViewHolders.MovieViewHolder
 import com.example.flex.models.*
 import com.squareup.picasso.Picasso
 import java.lang.IllegalArgumentException
 
 
-class RvAdapter(private val mediaList: ArrayList<Media>) : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
+class RvMediaAdapter(private val mediaList: ArrayList<Media>) : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
     override fun getItemCount(): Int {
         return mediaList.size
     }
@@ -72,21 +74,5 @@ class RvAdapter(private val mediaList: ArrayList<Media>) : androidx.recyclerview
                     .into(holder.poster)
             }
         }
-    }
-
-
-    class MovieViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView){
-        val movieId    = itemView.findViewById<TextView>(com.example.flex.R.id.movieId)
-        val name       = itemView.findViewById<TextView>(com.example.flex.R.id.movieName)
-        val duration   = itemView.findViewById<TextView>(com.example.flex.R.id.movieDuration)
-        val resolution = itemView.findViewById<TextView>(com.example.flex.R.id.movieResolution)
-        val size       = itemView.findViewById<TextView>(com.example.flex.R.id.movieSize)
-        val poster     = itemView.findViewById<ImageView>(com.example.flex.R.id.moviePoster)
-    }
-
-    class FolderViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView){
-        val folderId    = itemView.findViewById<TextView>(com.example.flex.R.id.folderId)
-        val name       = itemView.findViewById<TextView>(com.example.flex.R.id.folderName)
-        val poster     = itemView.findViewById<ImageView>(com.example.flex.R.id.folderPoster)
     }
 }

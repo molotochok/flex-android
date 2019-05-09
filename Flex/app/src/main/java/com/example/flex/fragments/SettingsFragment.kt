@@ -1,15 +1,22 @@
 package com.example.flex.fragments
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.flex.R
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.flex.adapters.RvSettingsAdapter
+import com.example.flex.models.Settings
+import androidx.recyclerview.widget.DividerItemDecoration
 
-class SettingsFragment : Fragment() {
+@SuppressLint("ValidFragment")
+class SettingsFragment @SuppressLint("ValidFragment") constructor(private val settingsList: ArrayList<Settings>) : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,11 +28,14 @@ class SettingsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+        val root = inflater.inflate(com.example.flex.R.layout.fragment_settings, container, false)
+
+        updateSettingsList(root)
+
+        return root
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
+
     fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)
     }
@@ -44,36 +54,24 @@ class SettingsFragment : Fragment() {
         listener = null
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     *
-     *
-     * See the Android Training lesson [Communicating with Other Fragments]
-     * (http://developer.android.com/training/basics/fragments/communicating.html)
-     * for more information.
-     */
+    @SuppressLint("WrongConstant")
+    fun updateSettingsList(root: View){
+        val recyclerView = root.findViewById<RecyclerView>(com.example.flex.R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayout.VERTICAL, false)
+        recyclerView.addItemDecoration(
+            DividerItemDecoration(
+                context!!,
+                DividerItemDecoration.VERTICAL
+            )
+        )
+
+        val rvAdapter = RvSettingsAdapter(settingsList)
+        recyclerView.adapter = rvAdapter
+    }
+
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SettingsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance() =
-            SettingsFragment().apply {
-                arguments = Bundle().apply {}
-            }
-    }
 }

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".fragments.SettingsConnectionFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <com.google.android.material.textfield.TextInputLayout
+                android:maxWidth="320dp"
+                android:layout_width="320dp"
+                android:padding="2dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                app:layout_constraintHorizontal_bias="0.506" android:id="@+id/host_input_layout"
+                android:layout_marginTop="24dp" app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hostname"
+                    style="@style/Widget.AppCompat.EditText"
+                    android:background="@null"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+                android:text="@string/ip_example"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView7"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                app:layout_constraintHorizontal_bias="0.267"
+                app:layout_constraintTop_toBottomOf="@+id/host_input_layout" android:textSize="12sp"/>
+        <com.google.android.material.textfield.TextInputLayout
+                android:maxWidth="320dp"
+                android:layout_width="320dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                android:id="@+id/port_input_layout"
+                android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/port"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+                android:text="@string/the_default_flex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/port_input_layout"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                app:layout_constraintHorizontal_bias="0.261" android:textSize="12sp"/>
+        <com.google.android.material.textfield.TextInputLayout
+                android:maxWidth="320dp"
+                android:layout_width="320dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                android:id="@+id/textInputLayout3"
+                android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/display_name_optional"
+            />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+                android:text="@string/how_your_server"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView9"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                app:layout_constraintHorizontal_bias="0.373"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" android:textSize="12sp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

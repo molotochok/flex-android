@@ -12,12 +12,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.example.flex.R
-import com.example.flex.adapters.RvAdapter
+import com.example.flex.adapters.RvMediaAdapter
 import com.example.flex.decorators.MarginItemDecoration
 import com.example.flex.models.Folder
 import com.example.flex.models.Media
 import com.example.flex.models.Movie
-import com.ncapdevi.fragnav.FragNavController
 import kotlinx.android.synthetic.main.fragment_library.view.*
 
 
@@ -70,7 +69,7 @@ class LibraryFragment @SuppressLint("ValidFragment") constructor(private var ind
 
         val data = getMediaList(index)
 
-        val rvAdapter = RvAdapter(data)
+        val rvAdapter = RvMediaAdapter(data)
         recyclerView.adapter = rvAdapter
     }
 

@@ -12,29 +12,38 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.SearchView
 import kotlinx.android.synthetic.main.adapter_movie_layout.view.*
-import com.example.flex.fragments.DownloadsFragment
-import com.example.flex.fragments.LibraryFragment
-import com.example.flex.fragments.SettingsFragment
 import com.ncapdevi.fragnav.FragNavController
 import androidx.fragment.app.Fragment
 import com.example.flex.services.FragmentService
 import kotlinx.android.synthetic.main.activity_main.*
 import android.graphics.Color.parseColor
 import android.graphics.drawable.ColorDrawable
-
+import android.widget.TextView
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.core.content.ContextCompat.startActivity
+import com.example.flex.fragments.*
+import com.example.flex.models.Settings
+import com.example.flex.models.SettingsType
 
 
 class MainActivity : AppCompatActivity(),
     LibraryFragment.OnFragmentInteractionListener,
     DownloadsFragment.OnFragmentInteractionListener,
     SettingsFragment.OnFragmentInteractionListener,
+    SettingsConnectionFragment.OnFragmentInteractionListener,
+    SettingsAboutFragment.OnFragmentInteractionListener,
     FragNavController.TransactionListener
 {
+    private val settingsList = arrayListOf(
+            Settings(1, "Server connection", R.drawable.server_network_icon, SettingsType.ServerConnection),
+            Settings(2, "About", R.drawable.about_icon, SettingsType.About)
+    )
+
     //region Dependencies
     private val fragments = listOf(
         LibraryFragment(),
         DownloadsFragment(),
-        SettingsFragment()
+        SettingsFragment(settingsList)
     )
 
     private val fragmentService = FragmentService(supportFragmentManager, fragments)
@@ -106,6 +115,20 @@ class MainActivity : AppCompatActivity(),
 
     fun onCardViewClicked(view: View){
         val newFragment = LibraryFragment(1)
+
+        fragmentService.pushFragment(newFragment)
+    }
+
+    // Settings Fragment events
+    fun onSettingItemClicked(view: View){
+        val settingsId = view.findViewById<TextView>(R.id.settings_id).text.toString().toInt()
+
+        val settings = settingsList.first{s -> s.id == settingsId}
+
+        val newFragment = when(settings.settingsType) {
+            SettingsType.ServerConnection -> SettingsConnectionFragment()
+            SettingsType.About -> SettingsAboutFragment()
+        }
 
         fragmentService.pushFragment(newFragment)
     }
