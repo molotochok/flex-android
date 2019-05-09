@@ -34,7 +34,7 @@ class FragmentService(supportFragmentManager: FragmentManager, private val fragm
             fragmentHideStrategy = FragNavController.DETACH_ON_NAVIGATE_HIDE_ON_SWITCH
         }
 
-        fragNavController.initialize(FragNavController.TAB3, savedInstanceState)
+        fragNavController.initialize(FragNavController.TAB1, savedInstanceState)
     }
 
     fun setDisplayHomeAsUpEnabled(supportActionBar: ActionBar?){

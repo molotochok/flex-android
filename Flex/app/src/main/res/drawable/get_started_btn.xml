@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<selector xmlns:android="http://schemas.android.com/apk/res/android" android:color="@color/colorPrimaryDark">
     <item android:state_pressed="true" >
         <shape android:shape="rectangle"  >
             <corners android:radius="10dp" />
-            <stroke android:width="1dp" android:color="#d8d8d8" />
-            <solid android:color="@color/get_started_btn_pressed"/>
+            <stroke android:width="1dp" android:color="@color/get_started_btn_border" />
+            <solid android:color="@color/btn_pressed"/>
         </shape>
     </item>
     <item>
         <shape android:shape="rectangle"  >
             <corners android:radius="10dp" />
-            <stroke android:width="1dp" android:color="#d8d8d8" />
+            <stroke android:width="1dp" android:color="@color/get_started_btn_border" />
             <solid android:color="@color/colorPrimaryDark"/>
         </shape>
     </item>

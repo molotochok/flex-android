@@ -3,6 +3,7 @@ package com.example.flex
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,10 @@ import com.ncapdevi.fragnav.FragNavController
 import androidx.fragment.app.Fragment
 import com.example.flex.services.FragmentService
 import kotlinx.android.synthetic.main.activity_main.*
+import android.graphics.Color.parseColor
+import android.graphics.drawable.ColorDrawable
+
+
 
 class MainActivity : AppCompatActivity(),
     LibraryFragment.OnFragmentInteractionListener,
@@ -55,6 +60,9 @@ class MainActivity : AppCompatActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Set actionBar color
+        supportActionBar!!.setBackgroundDrawable(ColorDrawable(parseColor("#FFFFFFFF")))
 
         // FragmentService
         fragmentService.init(this, savedInstanceState)

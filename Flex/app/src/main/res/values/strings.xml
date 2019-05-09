@@ -42,4 +42,15 @@
     <string name="flex_url">https://flex.github.io</string>
     <string name="back_button_description">back button</string>
     <string name="next_button_description">next_button</string>
+    <string name="connect_to_your_flex_server">Connect to your flex server</string>
+    <string name="enter_server_connection">Enter server connection details manually or scan a QR code</string>
+    <string name="hostname">Hostname</string>
+    <string name="port">Port</string>
+    <string name="the_default_flex">The default flex server port is 51337</string>
+    <string name="display_name_optional">Display name (optional)</string>
+    <string name="how_your_server">How your server will be named inside the app</string>
+    <string name="back">BACK</string>
+    <string name="connect">CONNECT</string>
+    <string name="ip_example">E.g. 192.168.88.284 or example.com</string>
+    <string name="next">next</string>
 </resources>
