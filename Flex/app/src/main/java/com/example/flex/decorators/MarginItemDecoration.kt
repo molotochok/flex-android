@@ -4,9 +4,9 @@ import android.graphics.Rect
 import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 
-class MarginItemDecoration(private val spaceHeight: Int) : androidx.recyclerview.widget.RecyclerView.ItemDecoration() {
+class LibraryMarginItemDecoration(private val spaceHeight: Int) : RecyclerView.ItemDecoration() {
     override fun getItemOffsets(outRect: Rect, view: View,
-                                parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State) {
+                                parent: RecyclerView, state: RecyclerView.State) {
         with(outRect) {
             if (parent.getChildAdapterPosition(view) == 0) {
                 top = spaceHeight
@@ -17,3 +17,16 @@ class MarginItemDecoration(private val spaceHeight: Int) : androidx.recyclerview
         }
     }
 }
+
+class DownloadsMarginItemDecoration(private val spaceHeight: Int) : RecyclerView.ItemDecoration() {
+    override fun getItemOffsets(outRect: Rect, view: View,
+                                parent: RecyclerView, state: RecyclerView.State) {
+        with(outRect) {
+            if (parent.getChildAdapterPosition(view) == 0) {
+                top = spaceHeight
+            }
+            bottom = spaceHeight
+        }
+    }
+}
+

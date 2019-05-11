@@ -22,5 +22,13 @@
                 android:id="@+id/flexName" android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="24sp" android:layout_marginTop="16dp"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2" app:layout_constraintHorizontal_bias="0.498"/>
+        <TextView
+                android:text="Flex Server is an application used for synchronization and streaming your media library to other devices."
+                android:layout_width="337dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/flexName" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp" android:textAlignment="center"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

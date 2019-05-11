@@ -13,7 +13,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.example.flex.R
 import com.example.flex.adapters.RvMediaAdapter
-import com.example.flex.decorators.MarginItemDecoration
+import com.example.flex.decorators.LibraryMarginItemDecoration
 import com.example.flex.models.Folder
 import com.example.flex.models.Media
 import com.example.flex.models.Movie
@@ -36,7 +36,7 @@ class LibraryFragment @SuppressLint("ValidFragment") constructor(private var ind
         val root = inflater.inflate(R.layout.fragment_library, container, false)
 
         root.recyclerView.addItemDecoration(
-             MarginItemDecoration(resources.getDimension(R.dimen.recyclerView_margin).toInt())
+             LibraryMarginItemDecoration(resources.getDimension(R.dimen.recyclerView_margin).toInt())
          )
 
         updateMediaList(root)
@@ -90,7 +90,7 @@ class LibraryFragment @SuppressLint("ValidFragment") constructor(private var ind
     }
 
     // Private methods
-    private var mediaList = arrayListOf<ArrayList<Media>>(
+    private var mediaList = arrayListOf(
         arrayListOf<Media>(
             Folder(1,
                 "FOLDER example asd as das dasd asd ;lasd ;aspof oapsmf pasfm aslmf opas",
