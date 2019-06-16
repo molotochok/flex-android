@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import com.example.flex.R
 import com.example.flex.adapters.RvMediaAdapter
 import com.example.flex.decorators.LibraryMarginItemDecoration
@@ -38,6 +39,8 @@ class LibraryFragment @SuppressLint("ValidFragment") constructor(private var ind
         root.recyclerView.addItemDecoration(
              LibraryMarginItemDecoration(resources.getDimension(R.dimen.recyclerView_margin).toInt())
          )
+
+        (activity as AppCompatActivity).supportActionBar!!.show()
 
         updateMediaList(root)
 

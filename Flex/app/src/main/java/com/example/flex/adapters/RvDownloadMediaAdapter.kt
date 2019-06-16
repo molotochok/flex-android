@@ -73,6 +73,7 @@ class RvDownloadMediaAdapter (private val list: ArrayList<DownloadMedia>): Recyc
                 holder.maxSizeType?.text  = media.maxSizeType
                 holder.timeLeft?.text     = media.timeLeft.toString()
                 holder.timeLeftType?.text = media.timeLeftType
+                holder.progress?.progress = media.progress
 
                 Picasso
                     .get()

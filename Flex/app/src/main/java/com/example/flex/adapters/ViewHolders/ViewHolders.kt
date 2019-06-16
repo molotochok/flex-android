@@ -2,6 +2,7 @@ package com.example.flex.adapters.ViewHolders
 
 import android.view.View
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 
 class MovieViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView){
@@ -37,7 +38,7 @@ class DownloadingMovieViewHolder(itemView: View) : androidx.recyclerview.widget.
     val timeLeft = itemView.findViewById<TextView>(com.example.flex.R.id.downloadMovieTimeLeft)
     val timeLeftType = itemView.findViewById<TextView>(com.example.flex.R.id.downloadMovieTimeLeftType)
     val poster= itemView.findViewById<ImageView>(com.example.flex.R.id.downloadMoviePoster)
-    val progress = itemView.findViewById<TextView>(com.example.flex.R.id.downloadProgress)
+    val progress = itemView.findViewById<ProgressBar>(com.example.flex.R.id.downloadProgress)
 }
 
 class DownloadedMovieViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView){

@@ -19,6 +19,9 @@ import com.example.flex.models.DownloadingMovie
 import com.example.flex.models.DownloadStatus
 import com.example.flex.models.DownloadedMovie
 import kotlinx.android.synthetic.main.fragment_library.view.*
+import androidx.appcompat.app.AppCompatActivity
+
+
 
 class DownloadsFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
@@ -36,6 +39,7 @@ class DownloadsFragment : Fragment() {
             11,
             "min",
             "https://i.imgur.com/g5mdWLV.png",
+            20,
             DownloadStatus.Downloading),
         DownloadingMovie(
             2,
@@ -49,6 +53,7 @@ class DownloadsFragment : Fragment() {
             20,
             "min",
             "https://i.imgur.com/2LqPJXa.png",
+            79,
             DownloadStatus.Downloading),
         DownloadingMovie(
             3,
@@ -62,6 +67,7 @@ class DownloadsFragment : Fragment() {
             24,
             "min",
             "https://i.imgur.com/HAFskrl.png",
+            45,
             DownloadStatus.Downloading),
         DownloadedMovie(
             4,
@@ -83,11 +89,13 @@ class DownloadsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_downloads, container, false)
+        val root = inflater.inflate(com.example.flex.R.layout.fragment_downloads, container, false)
 
         root.recyclerView.addItemDecoration(
-            DownloadsMarginItemDecoration(resources.getDimension(R.dimen.recyclerView_margin).toInt())
+            DownloadsMarginItemDecoration(resources.getDimension(com.example.flex.R.dimen.recyclerView_margin).toInt())
         )
+
+        (activity as AppCompatActivity).supportActionBar!!.hide()
 
         updateDownloadsList(root)
         return root
@@ -113,7 +121,7 @@ class DownloadsFragment : Fragment() {
 
     @SuppressLint("WrongConstant")
     fun updateDownloadsList(root: View){
-        val recyclerView = root.findViewById<RecyclerView>(R.id.recyclerView)
+        val recyclerView = root.findViewById<RecyclerView>(com.example.flex.R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayout.VERTICAL, false)
 
         val data = getDownloadsList()

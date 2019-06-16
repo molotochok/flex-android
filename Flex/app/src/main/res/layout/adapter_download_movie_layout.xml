@@ -49,13 +49,13 @@
             android:id="@+id/downloadMovieSpeed"
             app:layout_constraintStart_toEndOf="@+id/downloadCardView"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/downloadMovieName"/>
+            android:layout_marginTop="4dp" app:layout_constraintTop_toBottomOf="@+id/downloadMovieName"/>
     <TextView
             android:text="-"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/textView11"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/downloadMovieName"
+            android:layout_marginTop="4dp" app:layout_constraintTop_toBottomOf="@+id/downloadMovieName"
             app:layout_constraintStart_toEndOf="@+id/downloadMovieSpeedType" android:layout_marginStart="5dp"/>
     <TextView
             android:text="6"
@@ -63,13 +63,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/downloadMovieCurrSize"
             app:layout_constraintStart_toEndOf="@+id/textView11" android:layout_marginStart="5dp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/downloadMovieName"/>
+            android:layout_marginTop="4dp" app:layout_constraintTop_toBottomOf="@+id/downloadMovieName"/>
     <TextView
             android:text="of"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView13"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/downloadMovieName"
+            android:layout_marginTop="4dp" app:layout_constraintTop_toBottomOf="@+id/downloadMovieName"
             app:layout_constraintStart_toEndOf="@+id/downloadMovieCurrSizeType" android:layout_marginStart="5dp"/>
     <TextView
             android:text="10.21"
@@ -77,14 +77,14 @@
             android:layout_height="wrap_content"
             android:id="@+id/downloadMovieMaxSize"
             app:layout_constraintStart_toEndOf="@+id/textView13" android:layout_marginStart="5dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             app:layout_constraintTop_toBottomOf="@+id/downloadMovieName"/>
     <TextView
             android:text="11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/downloadMovieTimeLeft" android:layout_marginTop="8dp"
+            android:id="@+id/downloadMovieTimeLeft" android:layout_marginTop="4dp"
             app:layout_constraintTop_toBottomOf="@+id/downloadMovieSpeed"
             app:layout_constraintStart_toEndOf="@+id/downloadCardView"
             android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.039"/>
@@ -93,14 +93,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/downloadMovieSpeedType" app:layout_constraintStart_toEndOf="@+id/downloadMovieSpeed"
-            android:layout_marginStart="3dp" android:layout_marginTop="8dp"
+            android:layout_marginStart="3dp" android:layout_marginTop="4dp"
             app:layout_constraintTop_toBottomOf="@+id/downloadMovieName"/>
     <TextView
             android:text="GB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/downloadMovieCurrSizeType" app:layout_constraintStart_toEndOf="@+id/downloadMovieCurrSize"
-            android:layout_marginStart="3dp" android:layout_marginTop="8dp"
+            android:layout_marginStart="3dp" android:layout_marginTop="4dp"
             app:layout_constraintTop_toBottomOf="@+id/downloadMovieName"/>
     <TextView
             android:text="GB"
@@ -108,21 +108,21 @@
             android:layout_height="wrap_content"
             android:id="@+id/downloadMovieMaxSizeType" app:layout_constraintStart_toEndOf="@+id/downloadMovieMaxSize"
             android:layout_marginStart="3dp" app:layout_constraintEnd_toStartOf="@+id/imageButton"
-            android:layout_marginEnd="10dp" app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp" app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="4dp"
             app:layout_constraintTop_toBottomOf="@+id/downloadMovieName"/>
     <TextView
             android:text="mins"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/downloadMovieTimeLeftType" app:layout_constraintStart_toEndOf="@+id/downloadMovieTimeLeft"
-            android:layout_marginStart="3dp" android:layout_marginTop="8dp"
+            android:layout_marginStart="3dp" android:layout_marginTop="4dp"
             app:layout_constraintTop_toBottomOf="@+id/downloadMovieSpeedType"/>
     <TextView
             android:text="left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView22" app:layout_constraintStart_toEndOf="@+id/downloadMovieTimeLeftType"
-            android:layout_marginStart="5dp" android:layout_marginTop="8dp"
+            android:layout_marginStart="5dp" android:layout_marginTop="4dp"
             app:layout_constraintTop_toBottomOf="@+id/downloadMovieCurrSize"/>
     <TextView
             android:layout_width="wrap_content"
@@ -138,6 +138,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintTop_toBottomOf="@+id/downloadMovieTimeLeftType" android:layout_marginTop="8dp"
-            android:progress="5"/>
+            app:layout_constraintTop_toBottomOf="@+id/downloadMovieTimeLeftType"
+            android:progress="5" android:layout_marginTop="2dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
