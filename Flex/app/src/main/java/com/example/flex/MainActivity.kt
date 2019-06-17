@@ -19,11 +19,17 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.graphics.Color.parseColor
 import android.graphics.drawable.ColorDrawable
 import android.widget.TextView
+import androidx.annotation.Nullable
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.content.ContextCompat.startActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import com.example.flex.database.entities.Media
 import com.example.flex.fragments.*
 import com.example.flex.models.Settings
 import com.example.flex.models.SettingsType
+import com.example.flex.viewModels.MainViewModel
+import org.jetbrains.anko.toast
 
 
 class MainActivity : AppCompatActivity(),
@@ -34,6 +40,8 @@ class MainActivity : AppCompatActivity(),
     SettingsAboutFragment.OnFragmentInteractionListener,
     FragNavController.TransactionListener
 {
+    private lateinit var mainViewModel : MainViewModel
+
     private val settingsList = arrayListOf(
             Settings(1, "Server connection", R.drawable.server_network_icon, SettingsType.ServerConnection),
             Settings(2, "About", R.drawable.about_icon, SettingsType.About)
@@ -69,6 +77,14 @@ class MainActivity : AppCompatActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        mainViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        mainViewModel.getAllMedia().observe(this, Observer {
+            @Override
+            fun onChanged(@Nullable media : ArrayList<Media> ){
+                toast("CHanged")
+            }
+        })
 
         // Set actionBar color
         supportActionBar!!.setBackgroundDrawable(ColorDrawable(parseColor("#FFFFFFFF")))
