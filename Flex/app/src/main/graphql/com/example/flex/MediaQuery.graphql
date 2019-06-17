@@ -8,5 +8,9 @@ query Media($id: Int) {
         status
         time_point
         last_seen
+        width
+        heigth
+        size
+        thumbnail
     }
 }

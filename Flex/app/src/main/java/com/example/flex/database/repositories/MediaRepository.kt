@@ -58,7 +58,11 @@ class MediaRepository(application: Application) {
                         media.created,
                         media.last_seen,
                         media.time_point,
-                        media.status
+                        media.status,
+                        media.width,
+                        media.heigth,
+                        media.size,
+                        media.thumbnail.toByteArray()
                     )
                     updatedMedia.add(entity)
                 }
