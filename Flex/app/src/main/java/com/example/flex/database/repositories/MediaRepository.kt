@@ -1,14 +1,17 @@
 package com.example.flex.database.repositories
 
-import com.example.flex.database.daos.MediaDao
 import android.app.Application
-import androidx.lifecycle.LiveData
-import com.example.flex.database.entities.Media
 import android.os.AsyncTask
+import androidx.lifecycle.LiveData
+import com.apollographql.apollo.ApolloCall
 import com.apollographql.apollo.api.Input
+import com.apollographql.apollo.api.Response
+import com.apollographql.apollo.exception.ApolloException
 import com.example.flex.MediaQuery
 import com.example.flex.database.FlexClient
 import com.example.flex.database.FlexDatabase
+import com.example.flex.database.daos.MediaDao
+import com.example.flex.database.entities.Media
 
 class MediaRepository(application: Application) {
     private val mediaDao: MediaDao
@@ -42,9 +45,32 @@ class MediaRepository(application: Application) {
 
         apollo.query(
             MediaQuery(Input.absent())
-        )
+        ).enqueue(object : ApolloCall.Callback<MediaQuery.Data>() {
+            override fun onResponse(response: Response<MediaQuery.Data>) {
+                val updatedMedia = ArrayList<Media>()
 
-        // TODO: finish this
+                for (media in response.data()?.media!!) {
+                    val entity = Media(
+                        media!!.id,
+                        media.name,
+                        media.path,
+                        media.duration,
+                        media.created,
+                        media.last_seen,
+                        media.time_point,
+                        media.status
+                    )
+                    updatedMedia.add(entity)
+                }
+
+                mediaDao.replaceAll(updatedMedia)
+            }
+
+            override fun onFailure(e: ApolloException) {
+                TODO("not implemented")
+            }
+        })
+
     }
 
 
