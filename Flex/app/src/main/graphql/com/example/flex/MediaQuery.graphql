@@ -1,0 +1,9 @@
+query Media($id: Int) {
+    media(id: $id) {
+        id
+        name
+        duration
+        last_modified
+        status
+    }
+}
