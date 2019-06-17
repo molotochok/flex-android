@@ -2,11 +2,13 @@ package com.example.flex.database.repositories
 
 import android.app.Application
 import android.os.AsyncTask
+import android.util.Log
 import androidx.lifecycle.LiveData
 import com.apollographql.apollo.ApolloCall
 import com.apollographql.apollo.api.Input
 import com.apollographql.apollo.api.Response
 import com.apollographql.apollo.exception.ApolloException
+import com.apollographql.apollo.exception.ApolloHttpException
 import com.example.flex.MediaQuery
 import com.example.flex.database.FlexClient
 import com.example.flex.database.FlexDatabase
@@ -15,7 +17,7 @@ import com.example.flex.database.entities.Media
 
 class MediaRepository(application: Application) {
     private val mediaDao: MediaDao
-    private val allMedia: LiveData<ArrayList<Media>>
+    private val allMedia: LiveData<List<Media>>
 
     init {
         val database = FlexDatabase.getInstance(application)
@@ -35,7 +37,7 @@ class MediaRepository(application: Application) {
         DeleteMediaAsyncTask(mediaDao).execute(media)
     }
 
-    fun getAllMedia() : LiveData<ArrayList<Media>>{
+    fun getAllMedia() : LiveData<List<Media>>{
         refreshAllMedia()
         return allMedia
     }
@@ -64,6 +66,7 @@ class MediaRepository(application: Application) {
                         media.size,
                         media.thumbnail.toByteArray()
                     )
+
                     updatedMedia.add(entity)
                 }
 
@@ -71,7 +74,8 @@ class MediaRepository(application: Application) {
             }
 
             override fun onFailure(e: ApolloException) {
-                TODO("not implemented")
+                val ee = e as ApolloHttpException
+                Log.e("kek", ee.rawResponse()?.body()?.string(), e)
             }
         })
 

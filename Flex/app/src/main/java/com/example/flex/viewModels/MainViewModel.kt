@@ -8,13 +8,13 @@ import com.example.flex.database.repositories.MediaRepository
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     val repository : MediaRepository = MediaRepository(application)
-    private val allMedia : LiveData<ArrayList<Media>>
+    private val allMedia : LiveData<List<Media>>
 
     init {
         allMedia = repository.getAllMedia()
     }
 
-    fun getAllMedia() : LiveData<ArrayList<Media>> {
+    fun getAllMedia() : LiveData<List<Media>> {
         return allMedia
     }
 }

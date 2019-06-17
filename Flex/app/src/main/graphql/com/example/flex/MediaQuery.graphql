@@ -1,4 +1,4 @@
-query Media($id: Int) {
+query MediaQuery($id: Int) {
     media(id: $id) {
         id
         name

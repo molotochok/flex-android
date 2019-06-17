@@ -17,20 +17,22 @@ abstract class MediaDao {
     @Delete
     abstract fun delete(media : Media)
 
+    @Transaction
     @Query("DELETE FROM media_table")
     abstract fun deleteAll()
 
     @Insert
     abstract fun insertAll(media: List<Media>)
 
+    @Transaction
     @Query("SELECT * FROM media_table")
-    abstract fun getAllMedia() : LiveData<ArrayList<Media>>
+    abstract fun getAllMedia() : LiveData<List<Media>>
 
     @Query("SELECT * FROM media_table WHERE id = :id")
     abstract fun getMediaById(id: Int) : LiveData<Media>
 
     @Transaction
-    fun replaceAll(media: List<Media>) {
+    open fun replaceAll(media: List<Media>) {
         deleteAll()
         insertAll(media)
     }
