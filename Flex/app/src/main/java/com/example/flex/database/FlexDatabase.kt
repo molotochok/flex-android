@@ -14,21 +14,23 @@ import com.example.flex.database.entities.ViewingInfo
 
 @Database(entities = [Media::class, Profiles::class, ViewingInfo::class], version = 1)
 abstract class FlexDatabase : RoomDatabase() {
-    private var instance: FlexDatabase? = null
-
     abstract fun mediaDao() : MediaDao
     abstract fun profilesDao() : ProfilesDao
     abstract fun viewingInfoDao() : ViewingInfoDao
 
-    @Synchronized
-    fun getInstance(context : Context): FlexDatabase?
-    {
-        if(instance == null){
-            instance = Room.databaseBuilder(context.applicationContext, FlexDatabase::class.java, "flex_database")
-                .fallbackToDestructiveMigration()
-                .build()
 
+    companion object {
+        private var instance: FlexDatabase? = null
+        @Synchronized
+        fun getInstance(context : Context): FlexDatabase?
+        {
+            if(instance == null){
+                instance = Room.databaseBuilder(context.applicationContext, FlexDatabase::class.java, "flex_database")
+                    .fallbackToDestructiveMigration()
+                    .build()
+
+            }
+            return instance
         }
-        return instance
     }
 }
