@@ -5,6 +5,9 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 import com.example.flex.database.entities.Media
 import android.os.AsyncTask
+import com.apollographql.apollo.api.Input
+import com.example.flex.MediaQuery
+import com.example.flex.database.FlexClient
 import com.example.flex.database.FlexDatabase
 
 class MediaRepository(application: Application) {
@@ -30,7 +33,18 @@ class MediaRepository(application: Application) {
     }
 
     fun getAllMedia() : LiveData<ArrayList<Media>>{
+        refreshAllMedia()
         return allMedia
+    }
+
+    private fun refreshAllMedia() {
+        val apollo = FlexClient.getClient()
+
+        apollo.query(
+            MediaQuery(Input.absent())
+        )
+
+        // TODO: finish this
     }
 
 

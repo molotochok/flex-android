@@ -8,7 +8,10 @@ data class Media(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val name: String,
+    val path: String,
     val duration : Int,
-    val lastModified : Int,
+    val created : Int,
+    val lastSeen : Int,
+    val timePoint : Int,
     val status : String
 )

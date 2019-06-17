@@ -5,18 +5,12 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.flex.database.daos.MediaDao
-import com.example.flex.database.daos.ProfilesDao
-import com.example.flex.database.daos.ViewingInfoDao
 import com.example.flex.database.entities.Media
-import com.example.flex.database.entities.Profiles
-import com.example.flex.database.entities.ViewingInfo
 
 
-@Database(entities = [Media::class, Profiles::class, ViewingInfo::class], version = 1)
+@Database(entities = [Media::class], version = 1)
 abstract class FlexDatabase : RoomDatabase() {
     abstract fun mediaDao() : MediaDao
-    abstract fun profilesDao() : ProfilesDao
-    abstract fun viewingInfoDao() : ViewingInfoDao
 
 
     companion object {

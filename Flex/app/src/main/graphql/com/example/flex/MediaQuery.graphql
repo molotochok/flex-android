@@ -2,8 +2,11 @@ query Media($id: Int) {
     media(id: $id) {
         id
         name
+        path
         duration
-        last_modified
+        created
         status
+        time_point
+        last_seen
     }
 }
