@@ -19,8 +19,8 @@ import com.google.android.material.textfield.TextInputEditText
 import kotlin.reflect.KClass
 
 
-class OnboardingActivity : AppCompatActivity(), OnboardingWelcomeFragment.OnFragmentInteractionListener,
-    OnboardingWebsiteFragment.OnFragmentInteractionListener, OnboardingSettingsFragment.OnFragmentInteractionListener, FragNavController.TransactionListener {
+class OnboardingActivity : AppCompatActivity(), OnboardingGetStartedFragment.OnFragmentInteractionListener,
+    OnboardingDownloadFragment.OnFragmentInteractionListener, OnboardingConnectFragment.OnFragmentInteractionListener, FragNavController.TransactionListener {
 
     //region Overrides
 
@@ -55,9 +55,9 @@ class OnboardingActivity : AppCompatActivity(), OnboardingWelcomeFragment.OnFrag
     //endregion
 
     private val fragments : List<Fragment> = listOf(
-        OnboardingWelcomeFragment(),
-        OnboardingWebsiteFragment(),
-        OnboardingSettingsFragment()
+        OnboardingGetStartedFragment(),
+        OnboardingDownloadFragment(),
+        OnboardingConnectFragment()
     )
 
     private val fragmentService = FragmentService(supportFragmentManager, fragments)
@@ -72,17 +72,17 @@ class OnboardingActivity : AppCompatActivity(), OnboardingWelcomeFragment.OnFrag
 
 
     //region Public Methods
-    // OnboardingWelcomeFragment event handlers
+    // OnboardingGetStartedFragment event handlers
     fun onGetStartedBtnClicked(view : View){
-        fragmentService.pushFragment(OnboardingWebsiteFragment())
+        fragmentService.pushFragment(OnboardingDownloadFragment())
     }
 
-    // OnboardingWebsiteFragment event handlers
+    // OnboardingDownloadFragment event handlers
     fun onBackBtnClicked(view : View){
         fragmentService.onBackPressed()
     }
     fun onNextBtnClicked(view : View){
-        fragmentService.pushFragment(OnboardingSettingsFragment())
+        fragmentService.pushFragment(OnboardingConnectFragment())
     }
 
     fun onShare(view : View){
@@ -93,7 +93,7 @@ class OnboardingActivity : AppCompatActivity(), OnboardingWelcomeFragment.OnFrag
         shareService.share(data)
     }
 
-    // OnboardingSettingsFragment event handlers
+    // OnboardingConnectFragment event handlers
     fun onOpenQrCodeScanner(view:View){
         if (permissionService.checkAndRequestPermissions()){
             openActivity(ScanActivity::class)

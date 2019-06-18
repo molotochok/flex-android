@@ -18,13 +18,13 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [OnboardingWelcomeFragment.OnFragmentInteractionListener] interface
+ * [OnboardingDownloadFragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [OnboardingWelcomeFragment.newInstance] factory method to
+ * Use the [OnboardingDownloadFragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class OnboardingWelcomeFragment : Fragment() {
+class OnboardingDownloadFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -43,7 +43,7 @@ class OnboardingWelcomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_welcome1, container, false)
+        return inflater.inflate(R.layout.fragment_welcome2, container, false)
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -88,12 +88,12 @@ class OnboardingWelcomeFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment OnboardingWelcomeFragment.
+         * @return A new instance of fragment OnboardingDownloadFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            OnboardingWelcomeFragment().apply {
+            OnboardingDownloadFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
