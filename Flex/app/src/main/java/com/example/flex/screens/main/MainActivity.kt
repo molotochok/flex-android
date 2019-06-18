@@ -7,12 +7,15 @@ import android.graphics.Color.parseColor
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.SearchView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.example.flex.R
 import com.example.flex.common.FragmentService
@@ -29,6 +32,7 @@ import com.ncapdevi.fragnav.FragNavController
 import com.tonyodev.fetch2.Fetch
 import com.tonyodev.fetch2.Request
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.adapter_movie_layout.*
 import kotlinx.android.synthetic.main.adapter_movie_layout.view.*
 import org.jetbrains.anko.toast
 
@@ -160,12 +164,13 @@ class MainActivity : AppCompatActivity(),
     }
 
     fun onDownloadButtonClicked(view: View) {
-        val url = FlexClient.getStreamingUrl(view.movieId.text.toString().toInt())
-        val filename = view.movieName.toString()
-
-        val request = Request(url.toString(), "/downloads/$filename")
-
-        Fetch.getDefaultInstance().enqueue(request)
+        toast("Coming soon!")
+//        val url = FlexClient.getStreamingUrl(movieId.text.toString().toInt())
+//        val filename = view.movieName.toString()
+//
+//        val request = Request(url.toString(), "/downloads/$filename")
+//
+//        Fetch.getDefaultInstance().enqueue(request)
     }
 
     // Settings Fragment events
