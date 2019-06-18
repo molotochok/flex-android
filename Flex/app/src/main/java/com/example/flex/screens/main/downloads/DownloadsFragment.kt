@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,73 +14,25 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_library.view.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.flex.R
+import com.example.flex.screens.main.library.MediaViewModel
+import com.example.flex.screens.main.library.Movie
+import com.example.flex.screens.main.library.RvMediaAdapter
+import org.jetbrains.anko.longToast
+import java.text.DecimalFormat
 
 
 class DownloadsFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
 
-    private val list : ArrayList<DownloadMedia> = arrayListOf(
-        DownloadingMovie(
-            1,
-            "Blade runner",
-            10f,
-            "MB/s",
-            1.2f,
-            "GB",
-            6f,
-            "GB",
-            11,
-            "min",
-            "https://i.imgur.com/g5mdWLV.png",
-            20,
-            DownloadStatus.Downloading
-        ),
-        DownloadingMovie(
-            2,
-            "Gladiator",
-            20f,
-            "MB/s",
-            0.4f,
-            "GB",
-            2f,
-            "GB",
-            20,
-            "min",
-            "https://i.imgur.com/2LqPJXa.png",
-            79,
-            DownloadStatus.Downloading
-        ),
-        DownloadingMovie(
-            3,
-            "Green mile",
-            15f,
-            "MB/s",
-            0.1f,
-            "GB",
-            2.2f,
-            "GB",
-            24,
-            "min",
-            "https://i.imgur.com/HAFskrl.png",
-            45,
-            DownloadStatus.Downloading
-        ),
-        DownloadedMovie(
-            4,
-            "Movie that is donwloaded",
-            0.1f,
-            "GB",
-            2.2f,
-            "GB",
-            "https://i.imgur.com/2LqPJXa.png",
-            DownloadStatus.Downloaded
-        )
-    )
+    lateinit var viewModel : DownloadMediaViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {}
+        viewModel = ViewModelProviders.of(this).get(DownloadMediaViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -112,19 +65,40 @@ class DownloadsFragment : Fragment() {
         listener = null
     }
 
-    private fun getDownloadsList() : ArrayList<DownloadMedia>{
-        return list
-    }
-
     @SuppressLint("WrongConstant")
     fun updateDownloadsList(root: View){
-        val recyclerView = root.findViewById<RecyclerView>(com.example.flex.R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayout.VERTICAL, false)
+        val recyclerView = root.findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
 
-        val data = getDownloadsList()
+        viewModel.error.observe(viewLifecycleOwner, Observer {
+            Log.e("updateMediaList", "Error: $it")
+            if (it!!) {
+                context?.longToast(
+                    """Unable to reach your flex server!
+                        |Please check if you have Internet access.""".trimMargin()
+                )
+            }
+        })
 
-        val rvAdapter = RvDownloadMediaAdapter(data)
-        recyclerView.adapter = rvAdapter
+        viewModel.getAllDownloadMedia().observe(viewLifecycleOwner, Observer {
+            recyclerView.adapter = RvDownloadMediaAdapter(it.map { media ->
+                DownloadMovie(
+                    media.id,
+                    media.name,
+                    fileSize(media.size),
+                    media.thumbnail,
+                    if(media.status == 100) DownloadStatus.Downloaded else DownloadStatus.Downloading
+                )
+            })
+        })
+    }
+
+    private fun fileSize(size:Int): String {
+        val longSize = size.toLong()
+        if (longSize <= 0) return "0"
+        val units = arrayOf("B", "kB", "MB", "GB", "TB")
+        val digitGroups = (Math.log10(longSize.toDouble()) / Math.log10(1024.0)).toInt()
+        return DecimalFormat("#,##0.#").format(longSize / Math.pow(1024.0, digitGroups.toDouble())) + " " + units[digitGroups]
     }
 
     interface OnFragmentInteractionListener {
