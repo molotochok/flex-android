@@ -25,7 +25,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/hostname"
                     style="@style/Widget.AppCompat.EditText"
-                    android:background="@null"/>
+                    android:background="@null" android:id="@+id/hostname_id"/>
         </com.google.android.material.textfield.TextInputLayout>
         <TextView
                 android:text="@string/ip_example"
@@ -49,7 +49,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/port"/>
+                    android:hint="@string/port" android:id="@+id/port_id"/>
         </com.google.android.material.textfield.TextInputLayout>
         <TextView
                 android:text="@string/the_default_flex"
@@ -74,7 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/display_name_optional"
-            />
+                    android:id="@+id/display_name_id"/>
         </com.google.android.material.textfield.TextInputLayout>
         <TextView
                 android:text="@string/how_your_server"

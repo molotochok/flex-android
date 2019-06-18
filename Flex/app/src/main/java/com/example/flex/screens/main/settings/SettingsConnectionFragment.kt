@@ -3,12 +3,15 @@ package com.example.flex.screens.main.settings
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.text.Editable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
 import com.example.flex.R
+import com.example.flex.common.Utils
+import kotlinx.android.synthetic.main.fragment_settings_connection.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,8 +45,14 @@ class SettingsConnectionFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val root = inflater.inflate(R.layout.fragment_settings_connection, container, false)
+
+        root.hostname_id.setText(Utils.readSharedSetting(activity!!.applicationContext, Utils.PREF_HOSTNAME_KEY, ""))
+        root.port_id.setText(Utils.readSharedSetting(activity!!.applicationContext, Utils.PREF_PORT_KEY, ""))
+        root.display_name_id.setText(Utils.readSharedSetting(activity!!.applicationContext, Utils.PREF_DISPLAY_NAME_KEY, ""))
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings_connection, container, false)
+        return root
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -93,8 +93,8 @@ class MainActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
 
         // Run OnBoarding activity if first time
-        val isUserFirstTime =
-            java.lang.Boolean.valueOf(Utils.readSharedSetting(this@MainActivity, PREF_USER_FIRST_TIME, "true"))
+            val isUserFirstTime =
+                java.lang.Boolean.valueOf(Utils.readSharedSetting(this@MainActivity, PREF_USER_FIRST_TIME, "true"))
 
         val introIntent = Intent(this@MainActivity, OnboardingActivity::class.java)
         introIntent.putExtra(PREF_USER_FIRST_TIME, isUserFirstTime)

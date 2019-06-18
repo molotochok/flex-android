@@ -10,14 +10,20 @@ import androidx.fragment.app.Fragment
 import com.example.flex.common.FragmentService
 import com.ncapdevi.fragnav.FragNavController
 import android.content.Intent
+import com.example.flex.R
 import com.example.flex.screens.main.MainActivity
 import com.example.flex.screens.scanner.ScanActivity
 import com.example.flex.common.PermissionService
 import com.example.flex.common.ShareService
 import com.example.flex.common.Utils
+import com.example.flex.common.Utils.PREF_DISPLAY_NAME_KEY
+import com.example.flex.common.Utils.PREF_HOSTNAME_KEY
+import com.example.flex.common.Utils.PREF_PORT_KEY
 import com.google.android.material.textfield.TextInputEditText
 import kotlin.reflect.KClass
 import com.example.flex.common.Utils.PREF_USER_FIRST_TIME
+import kotlinx.android.synthetic.main.fragment_welcome3.*
+import org.jetbrains.anko.toast
 
 
 class OnboardingActivity : AppCompatActivity(), OnboardingGetStartedFragment.OnFragmentInteractionListener,
@@ -103,7 +109,13 @@ class OnboardingActivity : AppCompatActivity(), OnboardingGetStartedFragment.OnF
 
     fun onConnectBtnClicked(view: View){
         //TODO: Perform connection here
+
+        toast(hostname_id.text.)
+
         Utils.saveSharedSetting(this@OnboardingActivity, PREF_USER_FIRST_TIME, "false")
+        Utils.saveSharedSetting(this@OnboardingActivity, PREF_HOSTNAME_KEY, "localhost")
+        Utils.saveSharedSetting(this@OnboardingActivity, PREF_PORT_KEY, "8080")
+        Utils.saveSharedSetting(this@OnboardingActivity, PREF_DISPLAY_NAME_KEY, "kekich")
 
         val myIntent = Intent(this, MainActivity::class.java)
         startActivity(myIntent)
