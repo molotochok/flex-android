@@ -1,5 +1,6 @@
 package com.example.flex.db
 
+import android.app.Application
 import android.util.Log
 import com.apollographql.apollo.ApolloClient
 import okhttp3.HttpUrl
@@ -22,6 +23,7 @@ class FlexClient {
         }
 
         private fun flexServerUrl(): HttpUrl {
+            
             return HttpUrl.Builder()
                 .scheme("http")
                 .host("192.168.88.238")

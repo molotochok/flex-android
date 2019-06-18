@@ -16,6 +16,10 @@ class FragmentService(supportFragmentManager: FragmentManager, private val fragm
 
     private var fragNavController: FragNavController = FragNavController(supportFragmentManager, R.id.container)
 
+    fun currentFragment() : Fragment?{
+        return fragNavController.currentFrag
+    }
+
     //region Public Methods
     fun init(activity : FragNavController.TransactionListener, savedInstanceState : Bundle?) {
         fragNavController.apply {

@@ -14,6 +14,7 @@ import android.widget.SearchView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.flex.R
 import com.example.flex.common.FragmentService
 import com.example.flex.common.Utils
 import com.example.flex.common.Utils.PREF_USER_FIRST_TIME
@@ -23,11 +24,13 @@ import com.example.flex.screens.main.library.LibraryFragment
 import com.example.flex.screens.main.settings.*
 import com.example.flex.screens.onboarding.OnboardingActivity
 import com.example.flex.screens.player.VideoActivity
+import com.google.android.material.textfield.TextInputEditText
 import com.ncapdevi.fragnav.FragNavController
 import com.tonyodev.fetch2.Fetch
 import com.tonyodev.fetch2.Request
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.adapter_movie_layout.view.*
+import org.jetbrains.anko.toast
 
 
 class MainActivity : AppCompatActivity(),
@@ -106,6 +109,10 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun onBackPressed() {
+        if(fragmentService.currentFragment() is SettingsConnectionFragment){
+            saveSettings(fragmentService.currentFragment() as SettingsConnectionFragment)
+        }
+
         if(!fragmentService.onBackPressed())
             super.onBackPressed()
     }
@@ -176,6 +183,22 @@ class MainActivity : AppCompatActivity(),
     }
 
     //region Private Methods
+
+    private fun saveSettings(fragment:SettingsConnectionFragment){
+        val fragmentView = fragment.view!!
+
+        val hostname = fragmentView.findViewById<TextInputEditText>(R.id.hostname_id).text.toString()
+        val port = fragmentView.findViewById<TextInputEditText>(R.id.port_id).text.toString()
+        val displayName = fragmentView.findViewById<TextInputEditText>(R.id.display_name_id).text.toString()
+
+        if (hostname.isEmpty() or port.isEmpty() or displayName.isEmpty())
+            return
+
+        Utils.saveSharedSetting(this@MainActivity, Utils.PREF_HOSTNAME_KEY, hostname)
+        Utils.saveSharedSetting(this@MainActivity, Utils.PREF_PORT_KEY, port)
+        Utils.saveSharedSetting(this@MainActivity, Utils.PREF_DISPLAY_NAME_KEY, displayName)
+    }
+
     private fun createSearchOption(menu : Menu?){
         // Associate searchable configuration with the SearchView
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
