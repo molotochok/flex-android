@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import com.example.flex.common.FragmentService
 import com.ncapdevi.fragnav.FragNavController
 import android.content.Intent
+import android.util.Log
+import android.widget.TextView
 import com.example.flex.R
 import com.example.flex.screens.main.MainActivity
 import com.example.flex.screens.scanner.ScanActivity
@@ -61,6 +63,7 @@ class OnboardingActivity : AppCompatActivity(), OnboardingGetStartedFragment.OnF
 
     //endregion
 
+    private lateinit var connectFragment: OnboardingConnectFragment
     private val fragments : List<Fragment> = listOf(
         OnboardingGetStartedFragment(),
         OnboardingDownloadFragment(),
@@ -89,7 +92,8 @@ class OnboardingActivity : AppCompatActivity(), OnboardingGetStartedFragment.OnF
         fragmentService.onBackPressed()
     }
     fun onNextBtnClicked(view : View){
-        fragmentService.pushFragment(OnboardingConnectFragment())
+        connectFragment = OnboardingConnectFragment()
+        fragmentService.pushFragment(connectFragment)
     }
 
     fun onShare(view : View){
@@ -108,14 +112,19 @@ class OnboardingActivity : AppCompatActivity(), OnboardingGetStartedFragment.OnF
     }
 
     fun onConnectBtnClicked(view: View){
-        //TODO: Perform connection here
+        val fragmentView = connectFragment.view!!
 
-        toast(hostname_id.text.)
+        val hostname = fragmentView.findViewById<TextInputEditText>(R.id.hostname_id).text.toString()
+        val port = fragmentView.findViewById<TextInputEditText>(R.id.port_id).text.toString()
+        val displayName = fragmentView.findViewById<TextInputEditText>(R.id.display_name_id).text.toString()
+
+        if (hostname.isEmpty() or port.isEmpty() or displayName.isEmpty())
+            return
 
         Utils.saveSharedSetting(this@OnboardingActivity, PREF_USER_FIRST_TIME, "false")
-        Utils.saveSharedSetting(this@OnboardingActivity, PREF_HOSTNAME_KEY, "localhost")
-        Utils.saveSharedSetting(this@OnboardingActivity, PREF_PORT_KEY, "8080")
-        Utils.saveSharedSetting(this@OnboardingActivity, PREF_DISPLAY_NAME_KEY, "kekich")
+        Utils.saveSharedSetting(this@OnboardingActivity, PREF_HOSTNAME_KEY, hostname)
+        Utils.saveSharedSetting(this@OnboardingActivity, PREF_PORT_KEY, port)
+        Utils.saveSharedSetting(this@OnboardingActivity, PREF_DISPLAY_NAME_KEY, displayName)
 
         val myIntent = Intent(this, MainActivity::class.java)
         startActivity(myIntent)

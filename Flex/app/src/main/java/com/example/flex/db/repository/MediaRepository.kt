@@ -27,6 +27,7 @@ class MediaRepository(application: Application) {
         mediaDao = database!!.mediaDao()
         allMedia = mediaDao.getAllMedia()
         error = MutableLiveData()
+        error.value = false
     }
 
     fun insert(media : Media){
@@ -47,8 +48,6 @@ class MediaRepository(application: Application) {
     }
 
     fun refreshAllMedia() {
-        Log.e("kek", allMedia.hasActiveObservers().toString())
-
         val apollo = FlexClient.getClient()
 
         apollo.query(

@@ -3,40 +3,29 @@ package com.example.flex.screens.main
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color.parseColor
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.SearchView
-import kotlinx.android.synthetic.main.adapter_movie_layout.view.*
-import com.ncapdevi.fragnav.FragNavController
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.flex.common.FragmentService
-import kotlinx.android.synthetic.main.activity_main.*
-import android.graphics.Color.parseColor
-import android.graphics.drawable.ColorDrawable
-import android.widget.TextView
-import androidx.annotation.Nullable
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
-import com.example.flex.screens.player.VideoActivity
-import com.example.flex.db.FlexClient
-import com.example.flex.db.entity.Media
-import com.example.flex.db.repository.MediaRepository
-import com.example.flex.screens.main.settings.Settings
-import com.example.flex.screens.main.settings.SettingsType
-import com.example.flex.screens.main.downloads.DownloadsFragment
-import com.example.flex.screens.main.library.LibraryFragment
-import com.example.flex.screens.main.library.MediaViewModel
-import com.example.flex.screens.main.settings.SettingsAboutFragment
-import com.example.flex.screens.main.settings.SettingsConnectionFragment
-import com.example.flex.screens.main.settings.SettingsFragment
-import org.jetbrains.anko.toast
 import com.example.flex.common.Utils
 import com.example.flex.common.Utils.PREF_USER_FIRST_TIME
+import com.example.flex.db.FlexClient
+import com.example.flex.screens.main.downloads.DownloadsFragment
+import com.example.flex.screens.main.library.LibraryFragment
+import com.example.flex.screens.main.settings.*
 import com.example.flex.screens.onboarding.OnboardingActivity
+import com.example.flex.screens.player.VideoActivity
+import com.ncapdevi.fragnav.FragNavController
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.adapter_movie_layout.view.*
 
 
 class MainActivity : AppCompatActivity(),
@@ -93,8 +82,9 @@ class MainActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
 
         // Run OnBoarding activity if first time
-            val isUserFirstTime =
-                java.lang.Boolean.valueOf(Utils.readSharedSetting(this@MainActivity, PREF_USER_FIRST_TIME, "true"))
+        val isUserFirstTime = Utils
+            .readSharedSetting(this@MainActivity, PREF_USER_FIRST_TIME, "true")!!
+            .toBoolean()
 
         val introIntent = Intent(this@MainActivity, OnboardingActivity::class.java)
         introIntent.putExtra(PREF_USER_FIRST_TIME, isUserFirstTime)

@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProviders
 import java.text.DecimalFormat
 import java.util.concurrent.TimeUnit
 import com.example.flex.R
+import com.example.flex.common.Utils
 import kotlinx.android.synthetic.main.fragment_library.view.*
 import org.jetbrains.anko.longToast
 
@@ -30,7 +31,6 @@ class LibraryFragment @SuppressLint("ValidFragment") constructor(private var ind
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {}
-        viewModel = ViewModelProviders.of(this).get(MediaViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -45,6 +45,8 @@ class LibraryFragment @SuppressLint("ValidFragment") constructor(private var ind
          )
 
         (activity as AppCompatActivity).supportActionBar!!.show()
+
+        viewModel = ViewModelProviders.of(this).get(MediaViewModel::class.java)
 
         updateMediaList(root)
 
@@ -75,8 +77,10 @@ class LibraryFragment @SuppressLint("ValidFragment") constructor(private var ind
         recyclerView.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
 
         viewModel.error.observe(viewLifecycleOwner, Observer {
-            Log.e("updateMediaList", "Error: $it")
-            if (it!!) {
+            val firstTime = Utils
+                .readSharedSetting(context!!, Utils.PREF_USER_FIRST_TIME, "true")!!
+                .toBoolean()
+            if (it!! and !firstTime) {
                 context?.longToast(
                     """Unable to reach your flex server!
                         |Please check if you have Internet access.""".trimMargin()
