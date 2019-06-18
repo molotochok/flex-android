@@ -15,11 +15,6 @@
         <activity
                 android:name=".screens.onboarding.OnboardingActivity"
                 android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".screens.main.library.SearchActivity">
             <intent-filter>
@@ -35,7 +30,11 @@
                 android:label="@string/title_activity_main"
                 android:launchMode="singleTop"
                 android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
             <meta-data
                     android:name="android.app.default_searchable"
                     android:value=".SearchableActivity"/>

@@ -21,7 +21,6 @@ import android.widget.TextView
 import androidx.annotation.Nullable
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.flex.R
 import com.example.flex.screens.player.VideoActivity
 import com.example.flex.db.FlexClient
 import com.example.flex.db.entity.Media
@@ -34,6 +33,9 @@ import com.example.flex.screens.main.settings.SettingsAboutFragment
 import com.example.flex.screens.main.settings.SettingsConnectionFragment
 import com.example.flex.screens.main.settings.SettingsFragment
 import org.jetbrains.anko.toast
+import com.example.flex.common.Utils
+import com.example.flex.common.Utils.PREF_USER_FIRST_TIME
+import com.example.flex.screens.onboarding.OnboardingActivity
 
 
 class MainActivity : AppCompatActivity(),
@@ -50,13 +52,13 @@ class MainActivity : AppCompatActivity(),
         Settings(
             1,
             "Server connection",
-            R.drawable.server_network_icon,
+            com.example.flex.R.drawable.server_network_icon,
             SettingsType.ServerConnection
         ),
         Settings(
             2,
             "About",
-            R.drawable.about_icon,
+            com.example.flex.R.drawable.about_icon,
             SettingsType.About
         )
     )
@@ -86,11 +88,22 @@ class MainActivity : AppCompatActivity(),
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
     //endregion
-
     //region AppCompatActivity overrides
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        // Run OnBoarding activity if first time
+        val isUserFirstTime =
+            java.lang.Boolean.valueOf(Utils.readSharedSetting(this@MainActivity, PREF_USER_FIRST_TIME, "true"))
+
+        val introIntent = Intent(this@MainActivity, OnboardingActivity::class.java)
+        introIntent.putExtra(PREF_USER_FIRST_TIME, isUserFirstTime)
+
+        if (isUserFirstTime)
+            startActivity(introIntent)
+        // --------------------------------------
+
+        setContentView(com.example.flex.R.layout.activity_main)
 
         viewModel = ViewModelProviders.of(this).get(MediaViewModel::class.java)
         viewModel.getAllMedia().observe(this, Observer {
@@ -119,7 +132,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.options_menu, menu)
+        menuInflater.inflate(com.example.flex.R.menu.options_menu, menu)
 
         createSearchOption(menu)
 
@@ -152,7 +165,7 @@ class MainActivity : AppCompatActivity(),
 
     // Settings Fragment events
     fun onSettingItemClicked(view: View){
-        val settingsId = view.findViewById<TextView>(R.id.settings_id).text.toString().toInt()
+        val settingsId = view.findViewById<TextView>(com.example.flex.R.id.settings_id).text.toString().toInt()
 
         val settings = settingsList.first{s -> s.id == settingsId}
 
@@ -169,7 +182,7 @@ class MainActivity : AppCompatActivity(),
         // Associate searchable configuration with the SearchView
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         if (menu != null) {
-            (menu.findItem(R.id.search).actionView as SearchView).apply {
+            (menu.findItem(com.example.flex.R.id.search).actionView as SearchView).apply {
                 setSearchableInfo(searchManager.getSearchableInfo(componentName))
                 setIconifiedByDefault(false)
             }

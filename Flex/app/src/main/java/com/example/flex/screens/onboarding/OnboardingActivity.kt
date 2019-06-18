@@ -10,13 +10,14 @@ import androidx.fragment.app.Fragment
 import com.example.flex.common.FragmentService
 import com.ncapdevi.fragnav.FragNavController
 import android.content.Intent
-import com.example.flex.R
 import com.example.flex.screens.main.MainActivity
 import com.example.flex.screens.scanner.ScanActivity
 import com.example.flex.common.PermissionService
 import com.example.flex.common.ShareService
+import com.example.flex.common.Utils
 import com.google.android.material.textfield.TextInputEditText
 import kotlin.reflect.KClass
+import com.example.flex.common.Utils.PREF_USER_FIRST_TIME
 
 
 class OnboardingActivity : AppCompatActivity(), OnboardingGetStartedFragment.OnFragmentInteractionListener,
@@ -65,7 +66,7 @@ class OnboardingActivity : AppCompatActivity(), OnboardingGetStartedFragment.OnF
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_welcome)
+        setContentView(com.example.flex.R.layout.activity_welcome)
 
         fragmentService.init(this, savedInstanceState)
     }
@@ -102,6 +103,7 @@ class OnboardingActivity : AppCompatActivity(), OnboardingGetStartedFragment.OnF
 
     fun onConnectBtnClicked(view: View){
         //TODO: Perform connection here
+        Utils.saveSharedSetting(this@OnboardingActivity, PREF_USER_FIRST_TIME, "false")
 
         val myIntent = Intent(this, MainActivity::class.java)
         startActivity(myIntent)
