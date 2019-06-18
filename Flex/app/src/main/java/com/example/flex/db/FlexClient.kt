@@ -1,10 +1,9 @@
 package com.example.flex.db
 
-import android.util.Log
 import com.apollographql.apollo.ApolloClient
 import com.example.flex.FlexApplication
-import okhttp3.HttpUrl
 import com.example.flex.common.Utils
+import okhttp3.HttpUrl
 
 class FlexClient {
     companion object {
@@ -13,9 +12,6 @@ class FlexClient {
                 .addPathSegment("query")
                 .build()
 
-            Log.i("kek", flexUrl.toString())
-
-            // FIXME: replace with settings
 
             return ApolloClient.builder()
                 .serverUrl(flexUrl)
