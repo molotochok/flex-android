@@ -24,6 +24,8 @@ import com.example.flex.screens.main.settings.*
 import com.example.flex.screens.onboarding.OnboardingActivity
 import com.example.flex.screens.player.VideoActivity
 import com.ncapdevi.fragnav.FragNavController
+import com.tonyodev.fetch2.Fetch
+import com.tonyodev.fetch2.Request
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.adapter_movie_layout.view.*
 
@@ -148,6 +150,15 @@ class MainActivity : AppCompatActivity(),
     fun onRefreshClicked(menuItem: MenuItem) {
         val fragment = fragments[0] as LibraryFragment
         fragment.viewModel.refresh()
+    }
+
+    fun onDownloadButtonClicked(view: View) {
+        val url = FlexClient.getStreamingUrl(view.movieId.text.toString().toInt())
+        val filename = view.movieName.toString()
+
+        val request = Request(url.toString(), "/downloads/$filename")
+
+        Fetch.getDefaultInstance().enqueue(request)
     }
 
     // Settings Fragment events

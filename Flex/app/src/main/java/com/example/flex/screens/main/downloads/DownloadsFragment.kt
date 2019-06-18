@@ -27,12 +27,9 @@ import java.text.DecimalFormat
 class DownloadsFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
 
-    lateinit var viewModel : DownloadMediaViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {}
-        viewModel = ViewModelProviders.of(this).get(DownloadMediaViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -69,28 +66,6 @@ class DownloadsFragment : Fragment() {
     fun updateDownloadsList(root: View){
         val recyclerView = root.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
-
-        viewModel.error.observe(viewLifecycleOwner, Observer {
-            Log.e("updateMediaList", "Error: $it")
-            if (it!!) {
-                context?.longToast(
-                    """Unable to reach your flex server!
-                        |Please check if you have Internet access.""".trimMargin()
-                )
-            }
-        })
-
-        viewModel.getAllDownloadMedia().observe(viewLifecycleOwner, Observer {
-            recyclerView.adapter = RvDownloadMediaAdapter(it.map { media ->
-                DownloadMovie(
-                    media.id,
-                    media.name,
-                    fileSize(media.size),
-                    media.thumbnail,
-                    if(media.status == 100) DownloadStatus.Downloaded else DownloadStatus.Downloading
-                )
-            })
-        })
     }
 
     private fun fileSize(size:Int): String {

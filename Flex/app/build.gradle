@@ -69,6 +69,9 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
+    // Fetch
+    implementation "androidx.tonyodev.fetch2:xfetch2:3.1.1"
+
     // FragNav for fragment navigation
     implementation 'com.ncapdevi:frag-nav:3.2.0'
 
