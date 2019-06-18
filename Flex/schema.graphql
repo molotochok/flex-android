@@ -1,0 +1,36 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Media {
+    created: Int!
+    duration: Int!
+    heigth: Int!
+    id: Int!
+    last_seen: Int!
+    name: String!
+    path: String!
+    size: Int!
+    status: String!
+    thumbnail: String!
+    time_point: Int!
+    width: Int!
+}
+
+type Mutation {
+    updateMedia(input: MediaInput!): Media!
+}
+
+type Query {
+    media(id: Int): [Media!]
+}
+
+input MediaInput {
+    id: Int!
+    last_seen: Int!
+    name: String!
+    time_point: Int!
+}

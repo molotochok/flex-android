@@ -13,7 +13,7 @@
             android:usesCleartextTraffic="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".WelcomeActivity"
+                android:name=".screens.onboarding.OnboardingActivity"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -21,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".SearchActivity">
+        <activity android:name=".screens.main.library.SearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH"/>
             </intent-filter>
@@ -31,7 +31,7 @@
                     android:resource="@xml/searchable"/>
         </activity>
         <activity
-                android:name=".MainActivity"
+                android:name=".screens.main.MainActivity"
                 android:label="@string/title_activity_main"
                 android:launchMode="singleTop"
                 android:screenOrientation="portrait">
@@ -41,12 +41,12 @@
                     android:value=".SearchableActivity"/>
         </activity>
         <activity
-                android:name=".VideoActivity"
+                android:name=".screens.player.VideoActivity"
                 android:screenOrientation="landscape"
                 android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <activity
-                android:name=".ScanActivity"
+                android:name=".screens.scanner.ScanActivity"
                 android:configChanges="orientation"
                 android:screenOrientation="portrait"
                 android:theme="@style/AppTheme.NoActionBar">
