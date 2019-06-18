@@ -5,25 +5,28 @@ import android.os.AsyncTask
 import android.util.Base64
 import android.util.Log
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.apollographql.apollo.ApolloCall
 import com.apollographql.apollo.api.Input
 import com.apollographql.apollo.api.Response
 import com.apollographql.apollo.exception.ApolloException
-import com.apollographql.apollo.exception.ApolloHttpException
 import com.example.flex.MediaQuery
 import com.example.flex.db.FlexClient
 import com.example.flex.db.FlexDatabase
 import com.example.flex.db.dao.MediaDao
 import com.example.flex.db.entity.Media
 
+
 class MediaRepository(application: Application) {
     private val mediaDao: MediaDao
     private val allMedia: LiveData<List<Media>>
+    val error: MutableLiveData<Boolean?>
 
     init {
         val database = FlexDatabase.getInstance(application)
         mediaDao = database!!.mediaDao()
         allMedia = mediaDao.getAllMedia()
+        error = MutableLiveData()
     }
 
     fun insert(media : Media){
@@ -43,12 +46,15 @@ class MediaRepository(application: Application) {
         return allMedia
     }
 
-    private fun refreshAllMedia() {
+    fun refreshAllMedia() {
+        Log.e("kek", allMedia.hasActiveObservers().toString())
+
         val apollo = FlexClient.getClient()
 
         apollo.query(
             MediaQuery(Input.absent())
         ).enqueue(object : ApolloCall.Callback<MediaQuery.Data>() {
+
             override fun onResponse(response: Response<MediaQuery.Data>) {
                 val updatedMedia = ArrayList<Media>()
 
@@ -73,11 +79,13 @@ class MediaRepository(application: Application) {
                 }
 
                 mediaDao.replaceAll(updatedMedia)
+
+                error.postValue(false)
             }
 
             override fun onFailure(e: ApolloException) {
-                val ee = e as ApolloHttpException
-                Log.e("kek", ee.rawResponse()?.body()?.string(), e)
+                error.postValue(true)
+                Log.e("refreshAllMedia", e.message, e)
             }
         })
 

@@ -24,6 +24,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.flex.screens.player.VideoActivity
 import com.example.flex.db.FlexClient
 import com.example.flex.db.entity.Media
+import com.example.flex.db.repository.MediaRepository
 import com.example.flex.screens.main.settings.Settings
 import com.example.flex.screens.main.settings.SettingsType
 import com.example.flex.screens.main.downloads.DownloadsFragment
@@ -46,7 +47,6 @@ class MainActivity : AppCompatActivity(),
     SettingsAboutFragment.OnFragmentInteractionListener,
     FragNavController.TransactionListener
 {
-    private lateinit var viewModel : MediaViewModel
 
     private val settingsList = arrayListOf(
         Settings(
@@ -105,14 +105,6 @@ class MainActivity : AppCompatActivity(),
 
         setContentView(com.example.flex.R.layout.activity_main)
 
-        viewModel = ViewModelProviders.of(this).get(MediaViewModel::class.java)
-        viewModel.getAllMedia().observe(this, Observer {
-            @Override
-            fun onChanged(@Nullable media : List<Media>){
-                toast("CHanged")
-            }
-        })
-
         // Set actionBar color
         supportActionBar!!.setBackgroundDrawable(ColorDrawable(parseColor("#FFFFFFFF")))
 
@@ -163,6 +155,11 @@ class MainActivity : AppCompatActivity(),
         fragmentService.pushFragment(newFragment)
     }
 
+    fun onRefreshClicked(menuItem: MenuItem) {
+        val fragment = fragments[0] as LibraryFragment
+        fragment.viewModel.refresh()
+    }
+
     // Settings Fragment events
     fun onSettingItemClicked(view: View){
         val settingsId = view.findViewById<TextView>(com.example.flex.R.id.settings_id).text.toString().toInt()
@@ -184,7 +181,7 @@ class MainActivity : AppCompatActivity(),
         if (menu != null) {
             (menu.findItem(com.example.flex.R.id.search).actionView as SearchView).apply {
                 setSearchableInfo(searchManager.getSearchableInfo(componentName))
-                setIconifiedByDefault(false)
+                isIconifiedByDefault = false
             }
         }
     }

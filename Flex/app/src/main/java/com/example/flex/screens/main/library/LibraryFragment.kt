@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,17 +18,19 @@ import java.text.DecimalFormat
 import java.util.concurrent.TimeUnit
 import com.example.flex.R
 import kotlinx.android.synthetic.main.fragment_library.view.*
-
+import org.jetbrains.anko.longToast
 
 
 class LibraryFragment @SuppressLint("ValidFragment") constructor(private var index: Int = 0) : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
 
-    private lateinit var viewModel: MediaViewModel
+    lateinit var viewModel: MediaViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {}
+        viewModel = ViewModelProviders.of(this).get(MediaViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -67,11 +70,20 @@ class LibraryFragment @SuppressLint("ValidFragment") constructor(private var ind
         listener = null
     }
 
-    fun updateMediaList(root: View){
+    private fun updateMediaList(root: View){
         val recyclerView = root.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
 
-        viewModel = ViewModelProviders.of(this).get(MediaViewModel::class.java)
+        viewModel.error.observe(viewLifecycleOwner, Observer {
+            Log.e("updateMediaList", "Error: $it")
+            if (it!!) {
+                context?.longToast(
+                    """Unable to reach your flex server!
+                        |Please check if you have Internet access.""".trimMargin()
+                )
+            }
+        })
+
         viewModel.getAllMedia().observe(viewLifecycleOwner, Observer {
             recyclerView.adapter = RvMediaAdapter(it.map { media ->
                 Movie(
