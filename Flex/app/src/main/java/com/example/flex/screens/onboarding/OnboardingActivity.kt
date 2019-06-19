@@ -10,9 +10,6 @@ import androidx.fragment.app.Fragment
 import com.example.flex.common.FragmentService
 import com.ncapdevi.fragnav.FragNavController
 import android.content.Intent
-import android.util.Log
-import android.widget.TextView
-import com.example.flex.R
 import com.example.flex.screens.main.MainActivity
 import com.example.flex.screens.scanner.ScanActivity
 import com.example.flex.common.PermissionService
@@ -24,8 +21,6 @@ import com.example.flex.common.Utils.PREF_PORT_KEY
 import com.google.android.material.textfield.TextInputEditText
 import kotlin.reflect.KClass
 import com.example.flex.common.Utils.PREF_USER_FIRST_TIME
-import kotlinx.android.synthetic.main.fragment_welcome3.*
-import org.jetbrains.anko.toast
 
 
 class OnboardingActivity : AppCompatActivity(), OnboardingGetStartedFragment.OnFragmentInteractionListener,
@@ -114,9 +109,9 @@ class OnboardingActivity : AppCompatActivity(), OnboardingGetStartedFragment.OnF
     fun onConnectBtnClicked(view: View){
         val fragmentView = connectFragment.view!!
 
-        val hostname = fragmentView.findViewById<TextInputEditText>(R.id.hostname_id).text.toString()
-        val port = fragmentView.findViewById<TextInputEditText>(R.id.port_id).text.toString()
-        val displayName = fragmentView.findViewById<TextInputEditText>(R.id.display_name_id).text.toString()
+        val hostname = fragmentView.findViewById<TextInputEditText>(com.example.flex.R.id.hostname_id).text.toString()
+        val port = fragmentView.findViewById<TextInputEditText>(com.example.flex.R.id.port_id).text.toString()
+        val displayName = fragmentView.findViewById<TextInputEditText>(com.example.flex.R.id.display_name_id).text.toString()
 
         if (hostname.isEmpty() or port.isEmpty() or displayName.isEmpty())
             return
@@ -134,7 +129,24 @@ class OnboardingActivity : AppCompatActivity(), OnboardingGetStartedFragment.OnF
     //region Private methods
     private fun<T> openActivity(activityClass: KClass<T>) where T: Activity {
         val intent = Intent(this, activityClass.java)
-        startActivity(intent)
+        startActivityForResult(intent, 1)
     }
     //endregion
+
+    public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1) {
+            if (resultCode == Activity.RESULT_OK) {
+                val host_name = data!!.getStringExtra("host_name")
+                val port = data!!.getStringExtra("port")
+                val display_name = data!!.getStringExtra("display_name")
+
+
+                val fragmentView = connectFragment.view!!
+                fragmentView.findViewById<TextInputEditText>(com.example.flex.R.id.hostname_id).setText(host_name)
+                fragmentView.findViewById<TextInputEditText>(com.example.flex.R.id.port_id).setText(port)
+                fragmentView.findViewById<TextInputEditText>(com.example.flex.R.id.display_name_id).setText(display_name)
+            }
+        }
+    }
 }

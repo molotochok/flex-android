@@ -1,5 +1,6 @@
 package com.example.flex.screens.scanner
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -57,14 +58,12 @@ class ScanActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
 
         val server = toml.to(Server::class.java)
 
-        builder.setMessage(server.flex.toString())
 
-        builder.setPositiveButton("Ok"){dialog, which ->
-            scannerView!!.resumeCameraPreview(this)
-        }
-
-        builder.create().show()
-
-        //onBackPressed()
+        val intent = Intent()
+        intent.putExtra("host_name", server.flex!!.host)
+        intent.putExtra("port", server.flex!!.port.toString())
+        intent.putExtra("display_name", server.flex!!.name)
+        setResult(RESULT_OK, intent)
+        finish()
     }
 }
